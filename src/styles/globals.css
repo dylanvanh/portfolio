@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 5% 12%;
+    --primary: 0 0% 100%;
+    --secondary: 0 2% 70%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 200 5% 12%;
+    --primary: 0 0% 100%;
+    --secondary: 0 2% 70%;
+    --radius: 0.5rem;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
