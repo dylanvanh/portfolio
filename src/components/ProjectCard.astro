@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  technologies: string[];
+}
+
+const { title, technologies, href } = Astro.props;
+---
+
+<div class="grid grid-cols-[1.5fr,4fr] gap-4">
+  <div class="text-primary underline hover:cursor-pointer">
+    <a href={href}>
+      {title}
+    </a>
+  </div>
+  <div class="text-accent">
+    {
+      technologies.map((tech, index) => (
+        <span>
+          {tech}
+          {index < technologies.length - 1 ? <span class="px-2">•</span> : ""}
+        </span>
+      ))
+    }
+  </div>
+</div>

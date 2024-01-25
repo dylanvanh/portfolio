@@ -1,13 +1,84 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import experienceItems from "../content/experience.json";
+import projectsItems from "../content/projects.json";
+import environmentItems from "../content/environment.json";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ToolBadge from "../components/ToolBadge.astro";
 ---
 
 <Layout title="Dylan van Heerden">
   <main class="ml-[10%] h-screen pt-24 md:ml-[20%]">
-    <div>
-      <h2 class="text-primary">Dylan van Heerden</h2>
-      <p>Software Engineer</p>
-      <p>Cape Town, South Africa</p>
+    <div class="mb-6 flex w-64 flex-col border-2">
+      <h2 class="mb-2 text-xl font-bold text-primary">Dylan van Heerden</h2>
+      <p class="mb-2 text-lg text-secondary">Software Engineer</p>
+      <p class="mb-8 text-accent">Cape Town, South Africa</p>
+      <p class="mb-4 text-center text-primary">Find me on:</p>
+      <div class="mb-4 flex justify-evenly">
+        <Image
+          src="/linkedin.svg"
+          alt="linkedin image"
+          width="24"
+          height="24"
+        />
+        <Image src="/github.svg" alt="github image" width="24" height="24" />
+        <Image src="/at-sign.svg" alt="@ sign image" width="24" height="24" />
+      </div>
     </div>
+    <div class="mb-16 max-w-2xl border-2">
+      <div class="mb-14 flex flex-col text-4xl">
+        <h1 class="font-bold text-primary">Software Engineer experienced in</h1>
+        <h1 class="font-bold text-[#47DF84]">
+          Java, Typescript <span class="text-white">&</span> Python
+        </h1>
+      </div>
+      <div>
+        <p class="text-primary">
+          Currently working as a majority backend Software Engineer at Entelect.
+          Mostly focused with Spring Boot 2 & 3. Lorem Ipsum Lorem IpsumLorem
+          IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum.   Passionate about
+          all things technology. I’ve recently started doing doing frontend in
+          my free time.   V im enthusiast  Lorem Ipsum
+        </p>
+      </div>
+    </div>
+    <section class="mb-16">
+      <h2 class="mb-4 font-heading text-primary">Experience</h2>
+      <div class="space-y-6">
+        {
+          experienceItems.map((item) => (
+            <ExperienceCard
+              period={item.period}
+              company={item.company}
+              position={item.position}
+              technologies={item.technologies}
+            />
+          ))
+        }
+      </div>
+    </section>
+    <section class="mb-16">
+      <h2 class="mb-4 font-heading text-primary">Projects</h2>
+      <div class="w-2/3 space-y-6">
+        {
+          projectsItems.map((item) => (
+            <ProjectCard
+              title={item.title}
+              href={item.href}
+              technologies={item.technologies}
+            />
+          ))
+        }
+      </div>
+    </section>
+    <section>
+      <h2 class="mb-4 font-heading text-primary">Dev Environment</h2>
+      <ToolBadge href="https://www.neovim.io" name="neovim" />
+      <div class="space-x-2">
+        {environmentItems.map((item) => <ToolBadge />)}
+      </div>
+    </section>
   </main>
 </Layout>

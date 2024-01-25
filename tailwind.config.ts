@@ -25,6 +25,9 @@ export default {
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
         },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

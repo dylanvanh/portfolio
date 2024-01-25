@@ -1,0 +1,27 @@
+---
+interface Props {
+  period: string;
+  company: string;
+  position: string;
+  technologies: string[];
+}
+
+const { period, company, position, technologies } = Astro.props;
+---
+
+<div class="grid grid-cols-[1fr,2fr,5fr] gap-4">
+  <div class="text-secondary">{period}</div>
+  <div class="text-primary">
+    <span>{company}</span> - {position}
+  </div>
+  <div class="flex flex-wrap text-accent">
+    {
+      technologies.map((tech, index) => (
+        <span>
+          {tech}
+          {index < technologies.length - 1 ? <span class="px-2">•</span> : ""}
+        </span>
+      ))
+    }
+  </div>
+</div>

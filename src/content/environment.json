@@ -1,0 +1,19 @@
+[
+  {
+    "unix": [
+      { "name": "neovim", "href": "https://neovim.io/" },
+      { "name": "allacrity", "href": "intellij.com" },
+      { "name": "tmux", "href": "intellij.com" },
+      { "name": "zsh", "href": "intellij.com" },
+      { "name": "raycast", "href": "intellij.com" }
+    ]
+  },
+  {
+    "windows": [
+      { "name": "intellij", "href": "intellij.com" },
+      { "name": "ideavim", "href": "ideavim" },
+      { "name": "allacrity", "href": "ideavim" },
+      { "name": "WSL2", "href": "ideavim" }
+    ]
+  }
+]

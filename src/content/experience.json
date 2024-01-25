@@ -1,0 +1,20 @@
+[
+  {
+    "period": "2023 - Present",
+    "company": "Entelect",
+    "position": "Software Engineer",
+    "technologies": ["Spring", "Java", "C#", "Dotnet"]
+  },
+  {
+    "period": "2022 - 2022",
+    "company": "Franc",
+    "position": "Software Engineer Intern",
+    "technologies": ["Flutter", "Dart", "Python", "Flask", "Vue", "Javascript"]
+  },
+  {
+    "period": "2020 - 2022",
+    "company": "Eduvos",
+    "position": "Bsc Information Technology",
+    "technologies": ["Python", "C++", "PHP"]
+  }
+]
