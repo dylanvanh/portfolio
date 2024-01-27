@@ -13,10 +13,16 @@
     ]
   },
   {
+    "title": "Portfolio",
+    "href": "https://github.com/dylanvanh/portfolio",
+    "technologies": ["Astro", "Typescript", "Tailwind"]
+  },
+  {
     "title": "Munch Out",
     "href": "https://github.com/dylanvanh/MunchOut",
     "technologies": ["Flutter", "Dart", "Python", "Flask", "MySQL", "Figma"]
   },
+
   {
     "title": "Crypto Wallet Tracker",
     "href": "https://github.com/dylanvanh/CryptoWalletTracker",
