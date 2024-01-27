@@ -1,15 +1,9 @@
 ---
-interface Props {
-  period: string;
-  company: string;
-  position: string;
-  technologies: string[];
-}
-
-const { period, company, position, technologies } = Astro.props;
+const { period, company, position, technologies } =
+  Astro.props as ExperienceItem;
 ---
 
-<div class="grid grid-cols-[1fr,2fr,5fr] gap-4">
+<div class="grid grid-cols-[2fr,2fr,6fr] gap-4">
   <div class="text-secondary">{period}</div>
   <div class="text-primary">
     <span>{company}</span> - {position}

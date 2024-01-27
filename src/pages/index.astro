@@ -1,16 +1,24 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import experienceItems from "../content/experience.json";
-import projectsItems from "../content/projects.json";
-import environmentItems from "../content/environment.json";
 import ExperienceCard from "../components/ExperienceCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ToolBadge from "../components/ToolBadge.astro";
+import rawExperienceItems from "../content/experience.json";
+import rawProjectsItems from "../content/projects.json";
+import rawEnvironmentItems from "../content/environment.json";
+
+const experienceItems: ExperienceItem[] =
+  rawExperienceItems as ExperienceItem[];
+
+const projectsItems: ProjectItem[] = rawProjectsItems as ProjectItem[];
+
+const environmentItems: EnvironmentItems =
+  rawEnvironmentItems as EnvironmentItems;
 ---
 
 <Layout title="Dylan van Heerden">
-  <main class="ml-[10%] h-screen pt-24 md:ml-[20%]">
+  <main class="ml-[10%] h-screen max-w-[700px] pt-24 md:ml-[20%]">
     <div class="mb-6 flex w-64 flex-col border-2">
       <h2 class="mb-2 text-xl font-bold text-primary">Dylan van Heerden</h2>
       <p class="mb-2 text-lg text-secondary">Software Engineer</p>
@@ -18,13 +26,26 @@ import ToolBadge from "../components/ToolBadge.astro";
       <p class="mb-4 text-center text-primary">Find me on:</p>
       <div class="mb-4 flex justify-evenly">
         <Image
+          class="hover:cursor-pointer"
           src="/linkedin.svg"
           alt="linkedin image"
           width="24"
           height="24"
         />
-        <Image src="/github.svg" alt="github image" width="24" height="24" />
-        <Image src="/at-sign.svg" alt="@ sign image" width="24" height="24" />
+        <Image
+          class="hover:cursor-pointer"
+          src="/github.svg"
+          alt="github image"
+          width="24"
+          height="24"
+        />
+        <Image
+          class="hover:cursor-pointer"
+          src="/at-sign.svg"
+          alt="@ sign image"
+          width="24"
+          height="24"
+        />
       </div>
     </div>
     <div class="mb-16 max-w-2xl border-2">
@@ -36,11 +57,11 @@ import ToolBadge from "../components/ToolBadge.astro";
       </div>
       <div>
         <p class="text-primary">
-          Currently working as a majority backend Software Engineer at Entelect.
-          Mostly focused with Spring Boot 2 & 3. Lorem Ipsum Lorem IpsumLorem
-          IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum.   Passionate about
-          all things technology. I’ve recently started doing doing frontend in
-          my free time.   V im enthusiast  Lorem Ipsum
+          I'm a Software Engineer at Entelect, specializing in Java and Spring
+          Boot. In my free time, I enjoy exploring frontend technologies,
+          constantly enhancing my versatility in the tech field. My next venture
+          is to learn Rust, expanding my expertise in both backend and frontend
+          realms.
         </p>
       </div>
     </div>
@@ -73,12 +94,52 @@ import ToolBadge from "../components/ToolBadge.astro";
         }
       </div>
     </section>
-    <section>
+    <section class="mb-16">
       <h2 class="mb-4 font-heading text-primary">Dev Environment</h2>
-      <ToolBadge href="https://www.neovim.io" name="neovim" />
+      <div class="mb-3 flex flex-row items-center space-x-2 text-primary">
+        <h3>Unix</h3>
+        <Image
+          class="hover:cursor-pointer"
+          src="/mac.svg"
+          alt="linkedin image"
+          width="23"
+          height="23"
+        />
+        <Image
+          class="hover:cursor-pointer"
+          src="/linux.svg"
+          alt="linkedin image"
+          width="27"
+          height="27"
+        />
+      </div>
+      <div class="mb-6 space-x-2">
+        {
+          environmentItems.unix.map((item) => (
+            <ToolBadge name={item.name} href={item.href} />
+          ))
+        }
+      </div>
+      <div class="mb-3 flex flex-row space-x-2 text-primary">
+        <h3>Windows</h3>
+        <Image
+          class="hover:cursor-pointer"
+          src="/windows.svg"
+          alt="linkedin image"
+          width="24"
+          height="24"
+        />
+      </div>
       <div class="space-x-2">
-        {environmentItems.map((item) => <ToolBadge />)}
+        {
+          environmentItems.windows.map((item) => (
+            <ToolBadge name={item.name} href={item.href} />
+          ))
+        }
       </div>
     </section>
+    <footer class="pb-12">
+      <p class="text-accent">© 2024 Dylan van Heerden. All rights reserved.</p>
+    </footer>
   </main>
 </Layout>
