@@ -31,5 +31,15 @@
     "title": "Dotfiles - Config files",
     "href": "https://github.com/dylanvanh/dotfiles",
     "technologies": ["Neovim", "Tmux", "Alacritty"]
+  },
+  {
+    "title": "CoronaBot - Telegram bot",
+    "href": "https://github.com/dylanvanh/CoronaBot",
+    "technologies": ["Python", "Telegram", "Pandas", "Matplotlib"]
+  },
+  {
+    "title": "ITECA3 - Ecommerce Uni Project",
+    "href": "https://github.com/dylanvanh/ITECA3-Project",
+    "technologies": ["PHP", "Bootstrap", "Javascript", "MySQL"]
   }
 ]
