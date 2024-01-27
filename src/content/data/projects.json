@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Interior Design Portfolio",
+    "href": "https://github.com/dylanvanh/jemma-website",
+    "technologies": [
+      "NextJS",
+      "React",
+      "Typescript",
+      "Tailwind",
+      "Shadcn",
+      "Telegram Bot",
+      "Bun"
+    ]
+  },
+  {
+    "title": "Munch Out",
+    "href": "https://github.com/dylanvanh/MunchOut",
+    "technologies": ["Flutter", "Dart", "Python", "Flask", "MySQL", "Figma"]
+  },
+  {
+    "title": "Crypto Wallet Tracker",
+    "href": "https://github.com/dylanvanh/CryptoWalletTracker",
+    "technologies": ["React", "Javascript", "Metamask", "Coingecko"]
+  },
+  {
+    "title": "Whatsapp Bot",
+    "href": "https://github.com/dylanvanh/CryptoWalletTracker",
+    "technologies": ["Spring", "Java", "Meta"]
+  },
+  {
+    "title": "Dotfiles - Config files",
+    "href": "https://github.com/dylanvanh/dotfiles",
+    "technologies": ["Neovim", "Tmux", "Alacritty"]
+  }
+]

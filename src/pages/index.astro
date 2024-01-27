@@ -1,13 +1,165 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ToolBadge from "../components/ToolBadge.astro";
+import rawExperienceItems from "../content/data/experience.json";
+import rawProjectsItems from "../content/data/projects.json";
+import rawEnvironmentItems from "../content/data/environment.json";
+
+const experienceItems: ExperienceItem[] =
+  rawExperienceItems as ExperienceItem[];
+
+const projectsItems: ProjectItem[] = rawProjectsItems as ProjectItem[];
+
+const environmentItems: EnvironmentItems =
+  rawEnvironmentItems as EnvironmentItems;
+
+const currentYear = new Date().getFullYear();
 ---
 
 <Layout title="Dylan van Heerden">
-  <main class="ml-[10%] h-screen pt-24 md:ml-[20%]">
-    <div>
-      <h2 class="text-primary">Dylan van Heerden</h2>
-      <p>Software Engineer</p>
-      <p>Cape Town, South Africa</p>
+  <main class="mx-8 h-screen max-w-[900px] pt-12 md:ml-[25%]">
+    <div class="mb-12 flex flex-col">
+      <h2 class="mb-2 text-xl font-bold text-primary">Dylan van Heerden</h2>
+      <p class="mb-2 text-lg text-secondary">Software Engineer</p>
+      <p class="mb-6 text-accent">Cape Town, South Africa</p>
+      <div class="flex w-full">
+        <div class="inline-block text-center text-primary">
+          <div class="flex justify-center space-x-4">
+            <a
+              class="rounded border border-gray-800 p-2 transition-colors duration-300 hover:bg-accent/25"
+              href="https://za.linkedin.com/in/dylan-van-heerden-a7b160139"
+              aria-label="linkedin link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                class="hover:scale-110 hover:cursor-pointer"
+                src="/linkedin.svg"
+                alt="linkedin image"
+                width="24"
+                height="24"
+              />
+            </a>
+            <a
+              class="rounded border border-gray-800 p-2 transition-colors duration-300 hover:bg-accent/25"
+              href="https://github.com/dylanvanh"
+              aria-label="github link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                class="hover:scale-110 hover:cursor-pointer"
+                src="/github.svg"
+                alt="github image"
+                width="24"
+                height="24"
+              />
+            </a>
+            <a
+              class="rounded border border-gray-800 p-2 transition-colors duration-300 hover:bg-accent/25"
+              href="mailto:dylanvanh45@gmail.com"
+              aria-label="Open Mail"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                class="hover:scale-110 hover:cursor-pointer"
+                src="/at-sign.svg"
+                alt="@ sign image"
+                width="24"
+                height="24"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="mb-12 max-w-2xl">
+      <div class="mb-8 flex flex-col text-4xl">
+        <h1 class="font-bold text-primary">Software Engineer experienced in</h1>
+        <h1 class="font-bold text-[#47DF84]">
+          Java, Typescript <span class="text-white">&</span> Python
+        </h1>
+      </div>
+      <div>
+        <p class="text-primary">
+          I'm a Software Engineer at Entelect - Cape Town, specializing in Java
+          and Spring Boot. In my free time, I enjoy exploring frontend
+          technologies, constantly enhancing my versatility in the tech field.
+          My next venture is to learn Rust.
+        </p>
+      </div>
+    </div>
+    <section class="mb-12">
+      <h2 class="mb-6 font-heading text-2xl font-bold text-primary">
+        Experience
+      </h2>
+      <div class="space-y-6">
+        {
+          experienceItems.map((item) => (
+            <ExperienceCard
+              period={item.period}
+              company={item.company}
+              position={item.position}
+              technologies={item.technologies}
+            />
+          ))
+        }
+      </div>
+    </section>
+    <section class="mb-12">
+      <h2 class="mb-6 font-heading text-2xl font-bold text-primary">
+        Projects
+      </h2>
+      <div class="w-2/3 space-y-6">
+        {
+          projectsItems.map((item) => (
+            <ProjectCard
+              title={item.title}
+              href={item.href}
+              technologies={item.technologies}
+            />
+          ))
+        }
+      </div>
+    </section>
+    <section class="mb-16">
+      <h2 class="mb-4 font-heading text-2xl font-bold text-primary">
+        Dev Environment
+      </h2>
+
+      <div class="mb-4 flex flex-row items-center space-x-2 text-primary">
+        <h3>Unix</h3>
+        <Image src="/mac.svg" alt="Mac icon" width="23" height="23" />
+        <Image src="/linux.svg" alt="Linux icon" width="27" height="27" />
+      </div>
+      <div class="mb-8 flex flex-wrap gap-2">
+        {
+          environmentItems.unix.map((item) => (
+            <ToolBadge name={item.name} href={item.href} />
+          ))
+        }
+      </div>
+
+      <div class="mb-4 flex flex-row items-center space-x-2 text-primary">
+        <h3>Windows</h3>
+        <Image src="/windows.svg" alt="Windows icon" width="24" height="24" />
+      </div>
+      <div class="flex flex-wrap gap-2">
+        {
+          environmentItems.windows.map((item) => (
+            <ToolBadge name={item.name} href={item.href} />
+          ))
+        }
+      </div>
+    </section>
+    <footer class="pb-12">
+      <p class="text-accent">
+        © {currentYear} Dylan van Heerden. All rights reserved.
+      </p>
+    </footer>
   </main>
 </Layout>

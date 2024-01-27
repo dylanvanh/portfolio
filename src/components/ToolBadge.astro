@@ -1,0 +1,13 @@
+---
+const { name, href } = Astro.props;
+---
+
+<a
+  href={href}
+  class="inline-block rounded border border-gray-800 px-3 py-1 text-sm font-bold text-primary transition-colors duration-300 hover:cursor-pointer hover:bg-accent/25"
+  target="_blank"
+  aria-label={`${name} link`}
+  rel="noopener noreferrer"
+>
+  {name}
+</a>

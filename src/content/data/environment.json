@@ -1,0 +1,15 @@
+{
+  "unix": [
+    { "name": "neovim", "href": "https://github.com/neovim/neovim" },
+    { "name": "allacrity", "href": "https://github.com/alacritty/alacritty" },
+    { "name": "tmux", "href": "https://github.com/tmux/tmux" },
+    { "name": "zsh", "href": "https://github.com/ohmyzsh/ohmyzsh" },
+    { "name": "obsidian", "href": "https://obsidian.md/" },
+    { "name": "raycast", "href": "https://www.raycast.com/" }
+  ],
+  "windows": [
+    { "name": "intellij", "href": "https://www.jetbrains.com/idea/" },
+    { "name": "ideavim", "href": "https://github.com/JetBrains/ideavim" },
+    { "name": "WSL2", "href": "https://ubuntu.com/wsl" }
+  ]
+}
