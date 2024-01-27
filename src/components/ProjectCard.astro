@@ -2,11 +2,17 @@
 const { title, technologies, href } = Astro.props as ProjectItem;
 ---
 
-<div class="grid-rows grid gap-4">
+<div class="grid-rows grid gap-2">
   <div
     class="text-primary underline hover:cursor-pointer hover:text-primary/40"
   >
-    <a href={href} class="hover:underline-offset-2">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hover:underline-offset-2"
+      aria-label={`${title} link`}
+    >
       {title}
     </a>
   </div>
