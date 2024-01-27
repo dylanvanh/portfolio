@@ -8,6 +8,7 @@
       "Typescript",
       "Tailwind",
       "Shadcn",
+      "Telegram Bot",
       "Bun"
     ]
   },
@@ -19,11 +20,16 @@
   {
     "title": "Crypto Wallet Tracker",
     "href": "https://github.com/dylanvanh/CryptoWalletTracker",
-    "technologies": ["Flutter", "Dart", "Python", "Flask", "MySQL", "Figma"]
+    "technologies": ["React", "Javascript", "Metamask", "Coingecko"]
   },
   {
     "title": "Whatsapp Bot",
     "href": "https://github.com/dylanvanh/CryptoWalletTracker",
     "technologies": ["Spring", "Java", "Meta"]
+  },
+  {
+    "title": "Dotfiles - Config files",
+    "href": "https://github.com/dylanvanh/dotfiles",
+    "technologies": ["Neovim", "Tmux", "Alacritty"]
   }
 ]
