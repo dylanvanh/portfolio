@@ -1,6 +1,12 @@
 [
   {
-    "period": "2023 - Present",
+    "period": "2024 - Present",
+    "company": "Liquidium",
+    "position": "FullStack Software Engineer",
+    "technologies": ["Next.js", "Blockchain", "Typescript", "React"]
+  },
+  {
+    "period": "2023 - 2024",
     "company": "Entelect",
     "position": "Software Engineer",
     "technologies": ["Spring", "Java", ".NET", "C#"]
