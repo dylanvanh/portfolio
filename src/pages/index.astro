@@ -4,6 +4,9 @@ import Layout from "../layouts/Layout.astro";
 import ExperienceCard from "../components/ExperienceCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ToolBadge from "../components/ToolBadge.astro";
+import type { ExperienceItem } from "../types/ExperienceItem";
+import type { ProjectItem } from "../types/ProjectItem";
+import type { EnvironmentItem, EnvironmentItems } from "../types/EnvironmentItem";
 import rawExperienceItems from "../content/data/experience.json";
 import rawProjectsItems from "../content/data/projects.json";
 import rawEnvironmentItems from "../content/data/environment.json";
@@ -112,6 +115,7 @@ const currentYear = new Date().getFullYear();
             <ProjectCard
               title={item.title}
               href={item.href}
+              websiteUrl={item.websiteUrl}
               technologies={item.technologies}
             />
           ))
@@ -130,7 +134,7 @@ const currentYear = new Date().getFullYear();
       </div>
       <div class="mb-8 flex flex-wrap gap-2">
         {
-          environmentItems.unix.map((item) => (
+          environmentItems.unix.map((item: EnvironmentItem) => (
             <ToolBadge name={item.name} href={item.href} />
           ))
         }
@@ -142,7 +146,7 @@ const currentYear = new Date().getFullYear();
       </div>
       <div class="flex flex-wrap gap-2">
         {
-          environmentItems.windows.map((item) => (
+          environmentItems.windows.map((item: EnvironmentItem) => (
             <ToolBadge name={item.name} href={item.href} />
           ))
         }

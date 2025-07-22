@@ -1,7 +1,44 @@
 [
   {
+    "title": "BTC Transaction Nuke",
+    "href": "https://github.com/dylanvanh/btc-transaction-nuke",
+    "websiteUrl": "https://btc-transaction-nuke.vercel.app/",
+    "technologies": [
+      "NextJS",
+      "Typescript",
+      "BitcoinJS",
+      "RBF",
+      "Tailwind"
+    ]
+  },
+  {
+    "title": "Pixel Pythons",
+    "href": "https://github.com/dylanvanh/pixel-pythons",
+    "websiteUrl": "https://www.pixelpythons.xyz",
+    "technologies": [
+      "NextJS",
+      "Typescript",
+      "BitcoinJS",
+      "Ordinals",
+      "Supabase",
+      "Tailwind",
+      "Zustand"
+    ]
+  },
+  {
+    "title": "Strava Bot",
+    "href": "https://github.com/dylanvanh/strava-bot",
+    "technologies": [
+      "Typescript",
+      "Strava API",
+      "Node.js",
+      "ExpressJs"
+    ]
+  },
+  {
     "title": "Interior Design Portfolio",
     "href": "https://github.com/dylanvanh/jemma-website",
+    "websiteUrl": "https://www.jemmawedgwood.co.za/",
     "technologies": [
       "NextJS",
       "React",
@@ -15,6 +52,7 @@
   {
     "title": "Portfolio",
     "href": "https://github.com/dylanvanh/portfolio",
+    "websiteUrl": "https://www.dylanvanheerden.co.za/",
     "technologies": ["Astro", "Typescript", "Tailwind"]
   },
   {
@@ -26,6 +64,7 @@
   {
     "title": "Crypto Wallet Tracker",
     "href": "https://github.com/dylanvanh/CryptoWalletTracker",
+    "websiteUrl": "https://sparklingwater-crypto-wallet-tracker.netlify.app/",
     "technologies": ["React", "Javascript", "Metamask", "Coingecko"]
   },
   {
@@ -44,7 +83,7 @@
     "technologies": ["Python", "Telegram", "Pandas", "Matplotlib"]
   },
   {
-    "title": "ITECA3 - Ecommerce Uni Project",
+    "title": "ITECA3 - Ecommerce University Project",
     "href": "https://github.com/dylanvanh/ITECA3-Project",
     "technologies": ["PHP", "Bootstrap", "Javascript", "MySQL"]
   }

@@ -1,4 +1,6 @@
 ---
+import type { ExperienceItem } from "../types/ExperienceItem";
+
 const { period, company, position, technologies } =
   Astro.props as ExperienceItem;
 ---
@@ -10,7 +12,7 @@ const { period, company, position, technologies } =
   </div>
   <div class="flex flex-wrap text-accent">
     {
-      technologies.map((tech, index) => (
+      technologies.map((tech: string, index: number) => (
         <span>
           {tech}
           {index < technologies.length - 1 ? <span class="px-2">•</span> : ""}

@@ -1,9 +1,9 @@
-type EnvironmentItem = {
+export type EnvironmentItem = {
   name: string;
   href: string;
 };
 
-type EnvironmentItems = {
+export type EnvironmentItems = {
   unix: EnvironmentItem[];
   windows: EnvironmentItem[];
 };

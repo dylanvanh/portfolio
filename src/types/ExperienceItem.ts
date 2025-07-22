@@ -1,4 +1,4 @@
-type ExperienceItem = {
+export type ExperienceItem = {
   period: string;
   company: string;
   position: string;
