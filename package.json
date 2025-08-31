@@ -9,8 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --check --ignore-path .gitignore .",
-    "format:fix": "prettier --write --ignore-path .gitignore .",
-    "prepare": "husky install"
+    "format:fix": "prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
@@ -22,12 +21,9 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.4",
-    "@commitlint/config-conventional": "^18.4.4",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.1.0",
-    "husky": "^8.0.0",
     "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.12.3",
     "prettier-plugin-tailwindcss": "^0.5.1",
