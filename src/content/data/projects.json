@@ -1,5 +1,14 @@
 [
   {
+    "title": "Strava Bot (Rust Rewrite)",
+    "href": "https://github.com/dylanvanh/strava-bot-rust",
+    "technologies": [
+      "Rust",
+      "Strava API",
+      "Docker"
+    ]
+  },
+  {
     "title": "BTC Transaction Nuke",
     "href": "https://github.com/dylanvanh/btc-transaction-nuke",
     "websiteUrl": "https://btc-transaction-nuke.vercel.app/",
