@@ -1,5 +1,16 @@
 [
   {
+    "title": "Investec Transaction Buckets",
+    "href": "https://github.com/dylanvanh/investec-transaction-buckets",
+    "technologies": [
+      "Rust",
+      "Investec API",
+      "AI",
+      "Docker",
+      "SQLite"
+    ]
+  },
+  {
     "title": "Strava Bot (Rust Rewrite)",
     "href": "https://github.com/dylanvanh/strava-bot-rust",
     "technologies": [
