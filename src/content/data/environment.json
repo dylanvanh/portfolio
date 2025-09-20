@@ -4,8 +4,10 @@
     { "name": "allacrity", "href": "https://github.com/alacritty/alacritty" },
     { "name": "tmux", "href": "https://github.com/tmux/tmux" },
     { "name": "zsh", "href": "https://github.com/ohmyzsh/ohmyzsh" },
-    { "name": "obsidian", "href": "https://obsidian.md/" },
-    { "name": "raycast", "href": "https://www.raycast.com/" }
+    { "name": "obsidian", "href": "https://obsidian.md" },
+    { "name": "raycast", "href": "https://www.raycast.com/" },
+    { "name": "aerospace", "href": "https://github.com/nikitabobko/AeroSpace" },
+    { "name": "sketchybar", "href": "https://github.com/FelixKratz/SketchyBar" }
   ],
   "windows": [
     { "name": "intellij", "href": "https://www.jetbrains.com/idea/" },
