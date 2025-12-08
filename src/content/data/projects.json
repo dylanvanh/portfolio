@@ -1,5 +1,17 @@
 [
   {
+    "title": "Homelab Infrastructure",
+    "href": "https://github.com/dylanvanh/homelab-infra",
+    "technologies": [
+      "Kubernetes",
+      "k3s",
+      "Helm",
+      "Tailscale",
+      "Cloudflare",
+      "Networking"
+    ]
+  },
+  {
     "title": "Investec Transaction Buckets",
     "href": "https://github.com/dylanvanh/investec-transaction-buckets",
     "technologies": [

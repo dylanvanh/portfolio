@@ -1,0 +1,27 @@
+sequenceDiagram
+    participant Seller
+    participant Buyer
+    participant Marketplace
+    participant Liquidium API
+    participant Instant Loans Canister
+    participant BNPL Canister
+
+    Seller->>Marketplace: Signed Sell & Escrow Tx
+    Marketplace->>BNPL Canister: store_collateral_tx(TX1)
+    
+    Buyer->>Marketplace: Request to BNPL Ordinal
+    Marketplace->>Liquidium API: Marketplace Multisig Escrow Tx
+    Liquidium API-->>Marketplace: Show Best Loan Offers
+    Marketplace->>Liquidium API: Request BNPL PSBT for buyer
+    Liquidium API-->>Marketplace: BNPL PSBT
+    Marketplace-->>Buyer: BNPL PSBT
+    
+    Buyer->>Buyer: Signs PSBT
+    Buyer->>Marketplace: Signed PSBT
+    Marketplace->>Marketplace: Signs 2/2 multisig
+    Marketplace->>Liquidium API: PSBT
+    Liquidium API->>Instant Loans Canister: PSBT
+    
+    Instant Loans Canister->>Instant Loans Canister: Validate and sign lender inputs
+    Instant Loans Canister->>BNPL Canister: broadcast_linked_txs(TX1_id, TX2_hex)
+    BNPL Canister->>BNPL Canister: submitpackage [TX1, TX2]
