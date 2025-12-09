@@ -1,7 +1,7 @@
 ---
 title: "BNPL on Bitcoin: Buy Ordinals Now, Pay Later"
 description: "A technical deep-dive into how I built Buy Now Pay Later for Ordinals at Liquidium.wtf, using atomic Bitcoin transactions and ICP canisters."
-pubDate: 2024-12-08
+pubDate: 2025-12-08
 tags: ["bitcoin", "ordinals", "icp", "liquidium"]
 image: "/blog/opengraph.png"
 ---
@@ -25,7 +25,7 @@ We needed a solution with specific constraints:
 The system involves four main components:
 
 - **Marketplace** (e.g. Satflow) handles user interaction, creates and stages the first transaction
-- **Liquidium.wtf Platform** handles validation and coordinates with the canisters
+- **Liquidium.wtf Protocol** handles validation and coordinates with the canisters
 - **Instant Loans Canister** (ICP) validates loan terms and signs as lender
 - **BNPL Canister** (ICP) stores the hidden transaction and handles atomic broadcast
 
@@ -54,7 +54,7 @@ The canister:
 
 ### 2. Buyer Prepares and Signs
 
-The buyer selects an Ordinal on the marketplace and chooses BNPL. The platform validates their funds, dummy UTXOs, and creates the TX2 PSBT. The buyer signs their inputs.
+The buyer selects an Ordinal on the marketplace and chooses BNPL. The protocol validates their funds, dummy UTXOs, and creates the TX2 PSBT. The buyer signs their inputs.
 
 ### 3. Instant Loans Canister Processes
 
@@ -96,7 +96,7 @@ You can see an example TX1 on-chain here: [d23308e...1ff3e68](https://ordiscan.c
 
 ### TX2 (Loan Transaction)
 
-Created by the platform, this transaction spends TX1's output and distributes funds to all parties:
+Created by the protocol, this transaction spends TX1's output and distributes funds to all parties:
 
 ```
 Inputs:                         Outputs:
@@ -144,10 +144,10 @@ The signing flow:
 
 ## Security Considerations
 
-- **TX1 stays hidden until broadcast:** The BNPL canister acts as a secure enclave holding the signed TX1 off-chain. Even Liquidium cannot view the fully signed transaction stored in the canister. The ICP runtime ensures data privacy until the canister explicitly reveals it during broadcast. This prevents front-running where someone sees TX1 in the mempool and acts before the loan finalizes.
+- **TX1 stays hidden until broadcast:** The BNPL canister holds the signed TX1 on ICP in encrypted storage that even Liquidium cannot access. The ICP runtime ensures data privacy until the canister explicitly reveals it during broadcast. This prevents front-running where someone sees TX1 in the mempool and acts before the loan finalizes.
 - **Origin UTXO tracking:** The BNPL canister tracks exactly where the Ordinal came from, allowing validation that the correct inscription is being used.
 - **TRUC constraints:** Version 3 transactions enable package relay, preventing replacement and pinning attacks. The 1-parent-1-child topology restriction also limits the attack surface for transaction pinning.
-- **Inter-canister authorization:** Only whitelisted canisters and admin icp principals can interact with the BNPL canister.
+- **Inter-canister authorization:** Only whitelisted canisters and admin ICP principals can interact with the BNPL canister.
 - **Atomic dependency:** TX2 explicitly spends TX1's output. If TX1 isn't present, TX2 is invalid. The package broadcast ensures atomicity.
 
 ## What Happens After
