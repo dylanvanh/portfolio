@@ -1,11 +1,12 @@
 ---
-title: "BNPL on Bitcoin: How Liquidium Lets You Buy Ordinals Now and Pay Later"
-description: ""
+title: "BNPL on Bitcoin: How Liquidium.wtf Lets You Buy Ordinals Now and Pay Later"
+description: "A technical deep-dive into how I built Buy Now Pay Later for Ordinals at Liquidium.wtf, using atomic Bitcoin transactions and ICP canisters."
 pubDate: 2024-12-08
 tags: ["bitcoin", "ordinals", "icp", "liquidium"]
+image: "/blog/bnpl-satflow-screenshot.png"
 ---
 
-I recently built the BNPL (Buy Now Pay Later) system for Ordinals at [Liquidium](https://app.liquidium.wtf). It's now live with an integration on the [Satflow](https://satflow.com) marketplace. This post covers how it works from an implementation perspective.
+I recently built the BNPL (Buy Now Pay Later) system for Ordinals at [Liquidium.wtf](https://liquidium.wtf). It's now live with an integration on the [Satflow](https://satflow.com) marketplace. This post covers how it works from an implementation perspective.
 
 ![BNPL purchase flow on Satflow](/blog/bnpl-satflow-screenshot.png)
 
@@ -24,7 +25,7 @@ We needed a solution with specific constraints:
 The system involves four main components:
 
 - **Marketplace** (e.g. Satflow) handles user interaction, creates and stages the first transaction
-- **Liquidium Platform** handles validation and coordinates with the canisters
+- **Liquidium.wtf Platform** handles validation and coordinates with the canisters
 - **Instant Loans Canister** (ICP) validates loan terms and signs as lender
 - **BNPL Canister** (ICP) stores the hidden transaction and handles atomic broadcast
 

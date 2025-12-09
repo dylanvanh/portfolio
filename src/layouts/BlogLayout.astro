@@ -6,9 +6,10 @@ interface Props {
   description: string;
   pubDate: Date;
   updatedDate?: Date;
+  image?: string;
 }
 
-const { title, description, pubDate, updatedDate } = Astro.props;
+const { title, description, pubDate, updatedDate, image } = Astro.props;
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString("en-US", {
@@ -18,7 +19,14 @@ const formatDate = (date: Date) =>
   });
 ---
 
-<Layout title={`${title} | Dylan van Heerden`}>
+<Layout
+  title={title}
+  description={description}
+  image={image}
+  type="article"
+  publishedTime={pubDate}
+  modifiedTime={updatedDate}
+>
   <main class="mx-auto max-w-[720px] px-6 py-12">
     <article>
       <header class="mb-8">
