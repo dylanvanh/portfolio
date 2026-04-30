@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant Writer
+    participant Buyer
+    participant Platform
+    participant Oracle
+
+    Writer->>Platform: Deposit BTC
+    Writer->>Platform: Create offer (strike as % above spot)
+    Buyer->>Platform: Accept offer and pay premium
+    Platform->>Oracle: Get BTC/USD
+    Oracle-->>Platform: Spot price
+    Platform->>Platform: Lock USD strike from % and spot
+    Platform-->>Writer: Premium credited, collateral committed
+    Note over Platform: At expiry
+    Platform->>Oracle: Get BTC/USD at expiry
+    alt BTC above strike
+        Platform-->>Buyer: Pay profit in BTC
+        Platform-->>Writer: Return remaining BTC
+    else BTC at or below strike
+        Platform-->>Writer: Return full BTC
+    end
