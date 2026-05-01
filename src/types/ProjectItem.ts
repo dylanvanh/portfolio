@@ -3,4 +3,5 @@ export type ProjectItem = {
   href: string;
   websiteUrl?: string;
   technologies: string[];
+  primaryLinkAriaLabel?: string;
 };

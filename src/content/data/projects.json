@@ -1,5 +1,19 @@
 [
   {
+    "title": "Isometric",
+    "href": "https://isometric.fi",
+    "websiteUrl": "https://isometric.fi",
+    "primaryLinkAriaLabel": "Isometric website",
+    "technologies": [
+      "Rust",
+      "Internet Computer (ICP)",
+      "Bitcoin",
+      "NextJS",
+      "Cloudflare",
+      "Terraform"
+    ]
+  },
+  {
     "title": "Homelab Infrastructure",
     "href": "https://github.com/dylanvanh/homelab-infra",
     "technologies": [
