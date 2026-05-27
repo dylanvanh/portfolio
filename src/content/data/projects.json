@@ -14,6 +14,20 @@
     ]
   },
   {
+    "title": "Liquidium SDK",
+    "href": "https://github.com/Liquidium-Inc/liquidium-sdk",
+    "websiteUrl": "https://app.liquidium.fi",
+    "technologies": [
+      "Typescript",
+      "SDK",
+      "Bitcoin",
+      "Ethereum",
+      "ICP",
+      "DeFi",
+      "Lending"
+    ]
+  },
+  {
     "title": "Homelab Infrastructure",
     "href": "https://github.com/dylanvanh/homelab-infra",
     "technologies": [
@@ -60,7 +74,7 @@
   {
     "title": "Pixel Pythons",
     "href": "https://github.com/dylanvanh/pixel-pythons",
-    "websiteUrl": "https://www.pixelpythons.xyz",
+    "websiteUrl": "https://pixelpythons.dylanvh.com",
     "technologies": [
       "NextJS",
       "Typescript",
