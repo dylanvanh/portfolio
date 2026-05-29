@@ -1,9 +1,8 @@
 [
   {
     "title": "Isometric",
-    "href": "https://isometric.fi",
+    "href": "https://github.com/isometricfi/isometric-mono",
     "websiteUrl": "https://isometric.fi",
-    "primaryLinkAriaLabel": "Isometric website",
     "technologies": [
       "Rust",
       "Internet Computer (ICP)",
