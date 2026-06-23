@@ -39,18 +39,7 @@
     ]
   },
   {
-    "title": "Investec Transaction Buckets",
-    "href": "https://github.com/dylanvanh/investec-transaction-buckets",
-    "technologies": [
-      "Rust",
-      "Investec API",
-      "AI",
-      "Docker",
-      "SQLite"
-    ]
-  },
-  {
-    "title": "Strava Bot (Rust Rewrite)",
+    "title": "Strava Bot",
     "href": "https://github.com/dylanvanh/strava-bot-rust",
     "technologies": [
       "Rust",
@@ -85,65 +74,14 @@
     ]
   },
   {
-    "title": "Strava Bot",
-    "href": "https://github.com/dylanvanh/strava-bot",
-    "technologies": [
-      "Typescript",
-      "Strava API",
-      "Node.js",
-      "ExpressJs"
-    ]
-  },
-  {
-    "title": "Interior Design Portfolio",
-    "href": "https://github.com/dylanvanh/jemma-website",
-    "websiteUrl": "https://www.jemmawedgwood.co.za/",
-    "technologies": [
-      "NextJS",
-      "React",
-      "Typescript",
-      "Tailwind",
-      "Shadcn",
-      "Telegram Bot",
-      "Bun"
-    ]
-  },
-  {
     "title": "Portfolio",
     "href": "https://github.com/dylanvanh/portfolio",
     "websiteUrl": "https://www.dylanvanheerden.co.za/",
     "technologies": ["Astro", "Typescript", "Tailwind"]
   },
   {
-    "title": "Munch Out",
-    "href": "https://github.com/dylanvanh/MunchOut",
-    "technologies": ["Flutter", "Dart", "Python", "Flask", "MySQL", "Figma"]
-  },
-
-  {
-    "title": "Crypto Wallet Tracker",
-    "href": "https://github.com/dylanvanh/CryptoWalletTracker",
-    "websiteUrl": "https://sparklingwater-crypto-wallet-tracker.netlify.app/",
-    "technologies": ["React", "Javascript", "Metamask", "Coingecko"]
-  },
-  {
-    "title": "Whatsapp Bot",
-    "href": "https://github.com/dylanvanh/whatsapp-bot-spring3",
-    "technologies": ["Spring", "Java", "Meta"]
-  },
-  {
-    "title": "Dotfiles - Config files",
+    "title": "Dotfiles",
     "href": "https://github.com/dylanvanh/dotfiles",
     "technologies": ["Neovim", "Tmux", "Alacritty"]
-  },
-  {
-    "title": "CoronaBot - Telegram bot",
-    "href": "https://github.com/dylanvanh/CoronaBot",
-    "technologies": ["Python", "Telegram", "Pandas", "Matplotlib"]
-  },
-  {
-    "title": "ITECA3 - Ecommerce University Project",
-    "href": "https://github.com/dylanvanh/ITECA3-Project",
-    "technologies": ["PHP", "Bootstrap", "Javascript", "MySQL"]
   }
 ]
