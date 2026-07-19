@@ -6,10 +6,14 @@ import ProjectCard from "../components/ProjectCard.astro";
 import ToolBadge from "../components/ToolBadge.astro";
 import type { ExperienceItem } from "../types/ExperienceItem";
 import type { ProjectItem } from "../types/ProjectItem";
-import type { EnvironmentItem, EnvironmentItems } from "../types/EnvironmentItem";
+import type {
+  EnvironmentItem,
+  EnvironmentItems,
+} from "../types/EnvironmentItem";
 import rawExperienceItems from "../content/data/experience.json";
 import rawProjectsItems from "../content/data/projects.json";
 import rawEnvironmentItems from "../content/data/environment.json";
+import { SITE_DESCRIPTION, SITE_NAME, SOCIAL_PROFILE_URLS } from "../lib/site";
 
 const experienceItems: ExperienceItem[] =
   rawExperienceItems as ExperienceItem[];
@@ -20,20 +24,37 @@ const environmentItems: EnvironmentItems =
   rawEnvironmentItems as EnvironmentItems;
 
 const currentYear = new Date().getFullYear();
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": new URL("/#person", Astro.site).href,
+  name: SITE_NAME,
+  url: new URL("/", Astro.site).href,
+  jobTitle: "Software Engineer",
+  homeLocation: {
+    "@type": "Place",
+    name: "Cape Town, South Africa",
+  },
+  sameAs: SOCIAL_PROFILE_URLS,
+};
 ---
 
-<Layout title="Dylan van Heerden">
+<Layout
+  title={SITE_NAME}
+  description={SITE_DESCRIPTION}
+  structuredData={personSchema}
+>
   <main class="mx-8 h-screen max-w-[900px] pt-12 md:ml-[25%]">
     <div class="mb-12 flex flex-col">
-      <h2 class="mb-2 text-xl font-bold text-primary">Dylan van Heerden</h2>
-      <p class="mb-2 text-lg text-secondary">Software Engineer</p>
-      <p class="mb-6 text-accent">Cape Town, South Africa</p>
+      <h1 class="text-primary mb-2 text-xl font-bold">{SITE_NAME}</h1>
+      <p class="text-secondary mb-2 text-lg">Software Engineer</p>
+      <p class="text-accent mb-6">Cape Town, South Africa</p>
       <div class="flex w-full">
-        <div class="inline-block text-center text-primary">
+        <div class="text-primary inline-block text-center">
           <div class="flex items-center space-x-4">
             <a
-              class="rounded border border-gray-800 p-2 transition-colors duration-300 hover:bg-accent/25"
-              href="https://za.linkedin.com/in/dylan-van-heerden-a7b160139"
+              class="hover:bg-accent/25 rounded border border-gray-800 p-2 transition-colors duration-300"
+              href="https://www.linkedin.com/in/dylanvanheerden/"
               aria-label="linkedin link"
               target="_blank"
               rel="noopener noreferrer"
@@ -47,7 +68,7 @@ const currentYear = new Date().getFullYear();
               />
             </a>
             <a
-              class="rounded border border-gray-800 p-2 transition-colors duration-300 hover:bg-accent/25"
+              class="hover:bg-accent/25 rounded border border-gray-800 p-2 transition-colors duration-300"
               href="https://github.com/dylanvanh"
               aria-label="github link"
               target="_blank"
@@ -62,7 +83,7 @@ const currentYear = new Date().getFullYear();
               />
             </a>
             <a
-              class="rounded border border-gray-800 p-2 transition-colors duration-300 hover:bg-accent/25"
+              class="hover:bg-accent/25 rounded border border-gray-800 p-2 transition-colors duration-300"
               href="https://x.com/obonobza"
               aria-label="X link"
               target="_blank"
@@ -77,7 +98,7 @@ const currentYear = new Date().getFullYear();
               />
             </a>
             <a
-              class="rounded border border-gray-800 p-2 transition-colors duration-300 hover:bg-accent/25"
+              class="hover:bg-accent/25 rounded border border-gray-800 p-2 transition-colors duration-300"
               href="mailto:dylanvanh45@gmail.com"
               aria-label="Open Mail"
               target="_blank"
@@ -92,8 +113,9 @@ const currentYear = new Date().getFullYear();
               />
             </a>
             <a
-              class="flex items-center gap-1 rounded border border-gray-800 px-3 py-2 text-sm text-primary transition-colors duration-300 hover:bg-accent/25"
+              class="text-primary hover:bg-accent/25 flex items-center gap-1 rounded border border-gray-800 px-3 py-2 text-sm transition-colors duration-300"
               href="/blog"
+              data-astro-prefetch
             >
               Blog
               <span>→</span>
@@ -103,7 +125,7 @@ const currentYear = new Date().getFullYear();
       </div>
     </div>
     <section class="mb-12">
-      <h2 class="mb-6 font-heading text-2xl font-bold text-primary">
+      <h2 class="font-heading text-primary mb-6 text-2xl font-bold">
         Experience
       </h2>
       <div class="space-y-6">
@@ -120,7 +142,7 @@ const currentYear = new Date().getFullYear();
       </div>
     </section>
     <section class="mb-12">
-      <h2 class="mb-6 font-heading text-2xl font-bold text-primary">
+      <h2 class="font-heading text-primary mb-6 text-2xl font-bold">
         Projects
       </h2>
       <div class="w-5/6 space-y-6">
@@ -138,11 +160,11 @@ const currentYear = new Date().getFullYear();
       </div>
     </section>
     <section class="mb-16">
-      <h2 class="mb-4 font-heading text-2xl font-bold text-primary">
+      <h2 class="font-heading text-primary mb-4 text-2xl font-bold">
         Dev Environment
       </h2>
 
-      <div class="mb-4 flex flex-row items-center space-x-2 text-primary">
+      <div class="text-primary mb-4 flex flex-row items-center space-x-2">
         <h3>Unix</h3>
         <Image src="/mac.svg" alt="Mac icon" width="23" height="23" />
         <Image src="/linux.svg" alt="Linux icon" width="27" height="27" />
@@ -155,7 +177,7 @@ const currentYear = new Date().getFullYear();
         }
       </div>
 
-      <div class="mb-4 flex flex-row items-center space-x-2 text-primary">
+      <div class="text-primary mb-4 flex flex-row items-center space-x-2">
         <h3>Windows</h3>
         <Image src="/windows.svg" alt="Windows icon" width="24" height="24" />
       </div>

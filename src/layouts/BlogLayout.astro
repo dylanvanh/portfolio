@@ -1,5 +1,6 @@
 ---
 import Layout from "./Layout.astro";
+import { SITE_NAME } from "../lib/site";
 
 interface Props {
   title: string;
@@ -10,6 +11,24 @@ interface Props {
 }
 
 const { title, description, pubDate, updatedDate, image } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const imageURL = image ? new URL(image, Astro.site) : undefined;
+const blogPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  mainEntityOfPage: canonicalURL.href,
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate ?? pubDate).toISOString(),
+  author: {
+    "@type": "Person",
+    "@id": new URL("/#person", Astro.site).href,
+    name: SITE_NAME,
+    url: new URL("/", Astro.site).href,
+  },
+  ...(imageURL && { image: imageURL.href }),
+};
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString("en-US", {
@@ -26,13 +45,15 @@ const formatDate = (date: Date) =>
   type="article"
   publishedTime={pubDate}
   modifiedTime={updatedDate}
+  structuredData={blogPostingSchema}
 >
   <main class="mx-auto max-w-[720px] px-6 py-12">
     <article>
       <header class="mb-8">
         <a
           href="/blog"
-          class="mb-6 inline-flex items-center gap-2 text-sm text-accent transition-colors hover:text-primary"
+          data-astro-prefetch
+          class="text-accent hover:text-primary mb-6 inline-flex items-center gap-2 text-sm transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -49,24 +70,30 @@ const formatDate = (date: Date) =>
           </svg>
           Back to blog
         </a>
-        <h1 class="mb-4 text-3xl font-bold text-primary md:text-4xl">
+        <h1 class="text-primary mb-4 text-3xl font-bold md:text-4xl">
           {title}
         </h1>
-        <p class="mb-4 text-lg text-secondary">{description}</p>
-        <div class="flex items-center gap-4 text-sm text-accent">
+        <p class="text-secondary mb-4 text-lg">{description}</p>
+        <div class="text-accent flex items-center gap-4 text-sm">
           <time datetime={pubDate.toISOString()}>
             {formatDate(pubDate)}
           </time>
           {
             updatedDate && (
               <span>
-                (Updated: <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate)}</time>)
+                (Updated:{" "}
+                <time datetime={updatedDate.toISOString()}>
+                  {formatDate(updatedDate)}
+                </time>
+                )
               </span>
             )
           }
         </div>
       </header>
-      <div class="prose prose-invert prose-gray max-w-none prose-headings:text-primary prose-p:text-secondary prose-a:text-primary prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-accent prose-strong:text-primary prose-code:rounded prose-code:bg-white/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none prose-pre:bg-white/5 prose-blockquote:border-l-gray-700 prose-blockquote:text-accent prose-li:text-secondary">
+      <div
+        class="prose prose-invert prose-gray prose-headings:text-primary prose-p:text-secondary prose-a:text-primary prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-accent prose-strong:text-primary prose-code:rounded prose-code:bg-white/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none prose-pre:bg-white/5 prose-blockquote:border-l-gray-700 prose-blockquote:text-accent prose-li:text-secondary max-w-none"
+      >
         <slot />
       </div>
     </article>

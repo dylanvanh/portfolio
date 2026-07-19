@@ -1,5 +1,5 @@
 import { chromium } from "playwright";
-import { readFileSync, writeFileSync, readdirSync } from "fs";
+import { readFileSync, readdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -94,7 +94,9 @@ async function processMarkdownFile(filePath) {
   }
 
   const baseName = filePath.split("/").pop().replace(".md", "");
-  console.log(`Processing ${baseName}: found ${blocks.length} mermaid block(s)`);
+  console.log(
+    `Processing ${baseName}: found ${blocks.length} mermaid block(s)`,
+  );
 
   for (let i = 0; i < blocks.length; i++) {
     const suffix = blocks.length > 1 ? `-${i + 1}` : "";
