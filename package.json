@@ -10,6 +10,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
+    "deploy": "pnpm run build && wrangler deploy",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --check --ignore-path .gitignore .",
@@ -36,6 +37,7 @@
     "prettier": "^3.7.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "tailwindcss": "^4.3.3"
+    "tailwindcss": "^4.3.3",
+    "wrangler": "^4.112.0"
   }
 }

@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  "compatibility_date": "2026-07-19",
+  "assets": {
+    "directory": "./dist",
+  },
+  "routes": [
+    {
+      "pattern": "dylanvh.com/*",
+      "zone_name": "dylanvh.com",
+    },
+    {
+      "pattern": "www.dylanvh.com/*",
+      "zone_name": "dylanvh.com",
+    },
+  ],
+}
