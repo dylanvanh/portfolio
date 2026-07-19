@@ -1,10 +1,10 @@
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 
 RUN npm install -g pnpm
 
 WORKDIR /app
 
-COPY package*.json pnpm-lock.yaml ./
+COPY package*.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 RUN pnpm install --frozen-lockfile
