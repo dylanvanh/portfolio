@@ -5,19 +5,20 @@ const { period, company, position, technologies } =
   Astro.props as ExperienceItem;
 ---
 
-<div class="grid-rows grid gap-2">
-  <div class="text-secondary">{period}</div>
-  <div class="text-primary">
-    <span>{company}</span> - {position}
+<article>
+  <p class="text-accent mb-2 text-sm tabular-nums">{period}</p>
+  <div class="text-primary leading-6 text-pretty">
+    <span class="font-medium">{company}</span>
+    <span class="text-secondary"> · {position}</span>
   </div>
-  <div class="flex flex-wrap text-accent">
+  <div class="text-secondary mt-2 flex flex-wrap gap-x-2 text-sm leading-6">
     {
       technologies.map((tech: string, index: number) => (
-        <span>
+        <span class="flex items-center gap-2">
+          {index > 0 && <span aria-hidden="true">•</span>}
           {tech}
-          {index < technologies.length - 1 ? <span class="px-2">•</span> : ""}
         </span>
       ))
     }
   </div>
-</div>
+</article>

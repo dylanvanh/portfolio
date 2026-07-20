@@ -47,13 +47,13 @@ const formatDate = (date: Date) =>
   modifiedTime={updatedDate}
   structuredData={blogPostingSchema}
 >
-  <main class="mx-auto max-w-[720px] px-6 py-12">
+  <main class="mx-auto max-w-[760px] px-6 py-8 sm:px-8 sm:py-12">
     <article>
-      <header class="mb-8">
+      <header class="mb-10">
         <a
           href="/blog"
           data-astro-prefetch
-          class="text-accent hover:text-primary mb-6 inline-flex items-center gap-2 text-sm transition-colors"
+          class="text-secondary hover:text-primary mb-14 inline-flex items-center gap-2 text-sm transition-colors duration-150"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -70,11 +70,15 @@ const formatDate = (date: Date) =>
           </svg>
           Back to blog
         </a>
-        <h1 class="text-primary mb-4 text-3xl font-bold md:text-4xl">
+        <h1
+          class="text-primary mb-5 text-4xl font-semibold text-balance sm:text-5xl"
+        >
           {title}
         </h1>
-        <p class="text-secondary mb-4 text-lg">{description}</p>
-        <div class="text-accent flex items-center gap-4 text-sm">
+        <p class="text-secondary mb-5 text-lg leading-8 text-pretty">
+          {description}
+        </p>
+        <div class="text-accent flex items-center gap-4 text-sm tabular-nums">
           <time datetime={pubDate.toISOString()}>
             {formatDate(pubDate)}
           </time>
@@ -92,7 +96,7 @@ const formatDate = (date: Date) =>
         </div>
       </header>
       <div
-        class="prose prose-invert prose-gray prose-headings:text-primary prose-p:text-secondary prose-a:text-primary prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-accent prose-strong:text-primary prose-code:rounded prose-code:bg-white/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none prose-pre:bg-white/5 prose-blockquote:border-l-gray-700 prose-blockquote:text-accent prose-li:text-secondary max-w-none"
+        class="prose prose-invert prose-gray prose-headings:text-primary prose-headings:text-balance prose-p:text-secondary prose-p:text-pretty prose-a:text-primary prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-accent prose-strong:text-primary prose-code:rounded prose-code:bg-white/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none prose-pre:bg-surface prose-blockquote:border-l-border prose-blockquote:text-accent prose-li:text-secondary max-w-none"
       >
         <slot />
       </div>

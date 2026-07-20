@@ -5,42 +5,44 @@ const { title, technologies, href, websiteUrl, primaryLinkAriaLabel } =
   Astro.props as ProjectItem;
 ---
 
-<div class="grid-rows grid gap-2">
-  <div class="flex items-center gap-3">
-    <div
-      class="text-primary underline hover:cursor-pointer hover:text-primary/40"
-    >
+<article class="py-5 first:pt-0 last:pb-0">
+  <div class="flex min-w-0 items-center justify-between gap-4">
+    <div class="flex min-w-0 flex-wrap items-center gap-3">
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:underline-offset-2"
+        class="text-primary hover:text-accent font-medium transition-colors duration-150"
         aria-label={primaryLinkAriaLabel ?? `${title} GitHub repository`}
       >
         {title}
       </a>
+      {
+        websiteUrl && (
+          <a
+            href={websiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent hover:text-primary text-xs transition-colors duration-150"
+            aria-label={`${title} live website`}
+          >
+            Live ↗
+          </a>
+        )
+      }
     </div>
-    {websiteUrl && (
-      <a
-        href={websiteUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-1 rounded bg-accent/20 px-2 py-0.5 text-xs font-medium text-accent hover:bg-accent/30 transition-colors"
-        aria-label={`${title} live website`}
-      >
-        live
-        <span>→</span>
-      </a>
-    )}
+    <span class="text-secondary shrink-0" aria-hidden="true">↗</span>
   </div>
-  <div class="text-accent">
+  <div
+    class="text-secondary mt-2 flex min-w-0 flex-wrap gap-x-2 text-sm leading-6"
+  >
     {
       technologies.map((tech: string, index: number) => (
-        <span>
+        <span class="flex items-center gap-2">
+          {index > 0 && <span aria-hidden="true">•</span>}
           {tech}
-          {index < technologies.length - 1 ? <span class="px-2">•</span> : ""}
         </span>
       ))
     }
   </div>
-</div>
+</article>

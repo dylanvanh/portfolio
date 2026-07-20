@@ -18,12 +18,12 @@ const formatDate = (date: Date) =>
   title="Blog"
   description="Technical writing by Dylan van Heerden about Bitcoin, the Internet Computer, and software engineering."
 >
-  <main class="mx-auto max-w-[720px] px-6 py-12">
-    <header class="mb-12">
+  <main class="mx-auto max-w-[760px] px-6 py-8 sm:px-8 sm:py-12">
+    <header class="mb-16">
       <a
         href="/"
         data-astro-prefetch
-        class="text-accent hover:text-primary mb-6 inline-flex items-center gap-2 text-sm transition-colors"
+        class="text-secondary hover:text-primary mb-16 inline-flex items-center gap-2 text-sm transition-colors duration-150"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -40,45 +40,51 @@ const formatDate = (date: Date) =>
         </svg>
         Home
       </a>
-      <div class="flex items-center justify-between gap-6">
-        <h1 class="text-primary text-3xl font-bold md:text-4xl">Blog</h1>
+      <div class="flex items-end justify-between gap-6">
+        <h1
+          class="text-primary text-4xl font-semibold text-balance sm:text-5xl"
+        >
+          Writing
+        </h1>
         <a
           href="/rss.xml"
-          class="text-accent hover:text-primary text-sm transition-colors"
+          class="text-secondary hover:text-primary pb-1 text-sm transition-colors duration-150"
           >RSS</a
         >
       </div>
-      <p class="text-secondary mt-2">Works on my machine, documented here.</p>
+      <p class="text-secondary mt-5 max-w-xl text-lg leading-8 text-pretty">
+        Notes on Bitcoin, the Internet Computer, and building software.
+      </p>
     </header>
 
     {
       posts.length === 0 ? (
         <p class="text-accent">No posts yet. Check back soon!</p>
       ) : (
-        <ul class="space-y-8">
+        <ul class="divide-border border-border divide-y border-t">
           {posts.map((post) => (
             <li>
               <a
                 href={`/blog/${post.id}`}
                 data-astro-prefetch
-                class="group hover:bg-accent/5 block rounded-lg border border-gray-800 p-6 transition-colors hover:border-gray-700"
+                class="group block py-7"
               >
                 <time
                   datetime={post.data.pubDate.toISOString()}
-                  class="text-accent text-sm"
+                  class="text-accent text-sm tabular-nums"
                 >
                   {formatDate(post.data.pubDate)}
                 </time>
-                <h2 class="text-primary group-hover:text-secondary mt-2 text-xl font-semibold transition-colors">
+                <h2 class="text-primary group-hover:text-accent mt-2 text-xl font-medium text-balance transition-colors duration-150">
                   {post.data.title}
                 </h2>
-                <p class="text-secondary mt-2">{post.data.description}</p>
+                <p class="text-secondary mt-2 leading-7 text-pretty">
+                  {post.data.description}
+                </p>
                 {post.data.tags && post.data.tags.length > 0 && (
                   <div class="mt-4 flex flex-wrap gap-2">
                     {post.data.tags.map((tag) => (
-                      <span class="bg-accent/10 text-accent rounded-full px-3 py-1 text-xs">
-                        {tag}
-                      </span>
+                      <span class="text-accent text-xs">{tag}</span>
                     ))}
                   </div>
                 )}

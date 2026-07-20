@@ -44,155 +44,203 @@ const personSchema = {
   description={SITE_DESCRIPTION}
   structuredData={personSchema}
 >
-  <main class="mx-8 h-screen max-w-[900px] pt-12 md:ml-[25%]">
-    <div class="mb-12 flex flex-col">
-      <h1 class="text-primary mb-2 text-xl font-bold">{SITE_NAME}</h1>
-      <p class="text-secondary mb-2 text-lg">Software Engineer</p>
-      <p class="text-accent mb-6">Cape Town, South Africa</p>
-      <div class="flex w-full">
-        <div class="text-primary inline-block text-center">
-          <div class="flex items-center space-x-4">
-            <a
-              class="hover:bg-accent/25 rounded border border-gray-800 p-2 transition-colors duration-300"
-              href="https://www.linkedin.com/in/dylanvanheerden/"
-              aria-label="linkedin link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                class="hover:scale-110 hover:cursor-pointer"
-                src="/linkedin.svg"
-                alt="linkedin image"
-                width="24"
-                height="24"
+  <main id="top" class="mx-auto max-w-[760px] px-6 py-8 sm:px-8 sm:py-12">
+    <header class="mb-20 sm:mb-24">
+      <nav
+        class="mb-16 flex items-center justify-between sm:mb-20"
+        aria-label="Primary navigation"
+      >
+        <a href="/" class="text-primary text-sm font-medium">DVH</a>
+        <div class="text-secondary flex items-center gap-5 text-sm">
+          <a
+            class="hover:text-primary transition-colors duration-150"
+            href="#work">Work</a
+          >
+          <a
+            class="hover:text-primary transition-colors duration-150"
+            href="/blog"
+            data-astro-prefetch>Writing</a
+          >
+        </div>
+      </nav>
+
+      <div class="max-w-2xl">
+        <p class="text-accent mb-4 text-sm">Software engineer · Cape Town</p>
+        <h1
+          class="text-primary text-4xl font-semibold text-balance sm:text-5xl"
+        >
+          {SITE_NAME}
+        </h1>
+        <p class="text-secondary mt-6 max-w-xl text-lg leading-8 text-pretty">
+          I build specialised software across AI, crypto infrastructure, and the
+          web.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+          <a
+            class="text-secondary hover:text-primary inline-flex items-center gap-2 text-sm transition-colors duration-150"
+            href="https://www.linkedin.com/in/dylanvanheerden/"
+            aria-label="LinkedIn profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              class="size-4 opacity-70"
+              src="/linkedin.svg"
+              alt=""
+              width="16"
+              height="16"
+            />
+            LinkedIn
+          </a>
+          <a
+            class="text-secondary hover:text-primary inline-flex items-center gap-2 text-sm transition-colors duration-150"
+            href="https://github.com/dylanvanh"
+            aria-label="GitHub profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              class="size-4 opacity-70"
+              src="/github.svg"
+              alt=""
+              width="16"
+              height="16"
+            />
+            GitHub
+          </a>
+          <a
+            class="text-secondary hover:text-primary inline-flex items-center gap-2 text-sm transition-colors duration-150"
+            href="https://x.com/obonobza"
+            aria-label="X profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              class="size-4 opacity-70"
+              src="/x.svg"
+              alt=""
+              width="16"
+              height="16"
+            />
+            X
+          </a>
+          <a
+            class="text-secondary hover:text-primary inline-flex items-center gap-2 text-sm transition-colors duration-150"
+            href="mailto:dylanvanh45@gmail.com"
+            aria-label="Send Dylan an email"
+          >
+            <Image
+              class="size-4 opacity-70"
+              src="/at-sign.svg"
+              alt=""
+              width="16"
+              height="16"
+            />
+            Email
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section id="work" class="border-border border-t py-12 sm:py-16">
+      <div class="grid gap-8 sm:grid-cols-[140px_1fr]">
+        <h2 class="text-primary text-sm font-medium">Experience</h2>
+        <div class="space-y-10">
+          {
+            experienceItems.map((item) => (
+              <ExperienceCard
+                period={item.period}
+                company={item.company}
+                position={item.position}
+                technologies={item.technologies}
               />
-            </a>
-            <a
-              class="hover:bg-accent/25 rounded border border-gray-800 p-2 transition-colors duration-300"
-              href="https://github.com/dylanvanh"
-              aria-label="github link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                class="hover:scale-110 hover:cursor-pointer"
-                src="/github.svg"
-                alt="github image"
-                width="24"
-                height="24"
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="border-border border-t py-12 sm:py-16">
+      <div class="grid gap-8 sm:grid-cols-[140px_1fr]">
+        <h2 class="text-primary text-sm font-medium">Selected projects</h2>
+        <div class="divide-border min-w-0 divide-y">
+          {
+            projectsItems.map((item) => (
+              <ProjectCard
+                title={item.title}
+                href={item.href}
+                websiteUrl={item.websiteUrl}
+                technologies={item.technologies}
+                primaryLinkAriaLabel={item.primaryLinkAriaLabel}
               />
-            </a>
-            <a
-              class="hover:bg-accent/25 rounded border border-gray-800 p-2 transition-colors duration-300"
-              href="https://x.com/obonobza"
-              aria-label="X link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="border-border border-t py-12 sm:py-16">
+      <div class="grid gap-8 sm:grid-cols-[140px_1fr]">
+        <h2 class="text-primary text-sm font-medium">Environment</h2>
+        <div class="space-y-7">
+          <div>
+            <div class="text-secondary mb-3 flex items-center gap-2 text-sm">
+              <h3>Unix</h3>
               <Image
-                class="hover:scale-110 hover:cursor-pointer"
-                src="/x.svg"
-                alt="X image"
-                width="24"
-                height="24"
+                class="size-4"
+                src="/mac.svg"
+                alt=""
+                width="16"
+                height="16"
               />
-            </a>
-            <a
-              class="hover:bg-accent/25 rounded border border-gray-800 p-2 transition-colors duration-300"
-              href="mailto:dylanvanh45@gmail.com"
-              aria-label="Open Mail"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
               <Image
-                class="hover:scale-110 hover:cursor-pointer"
-                src="/at-sign.svg"
-                alt="@ sign image"
-                width="24"
-                height="24"
+                class="size-4"
+                src="/linux.svg"
+                alt=""
+                width="16"
+                height="16"
               />
-            </a>
-            <a
-              class="text-primary hover:bg-accent/25 flex items-center gap-1 rounded border border-gray-800 px-3 py-2 text-sm transition-colors duration-300"
-              href="/blog"
-              data-astro-prefetch
-            >
-              Blog
-              <span>→</span>
-            </a>
+            </div>
+            <div class="flex flex-wrap gap-x-4 gap-y-2">
+              {
+                environmentItems.unix.map((item: EnvironmentItem) => (
+                  <ToolBadge name={item.name} href={item.href} />
+                ))
+              }
+            </div>
+          </div>
+
+          <div>
+            <div class="text-secondary mb-3 flex items-center gap-2 text-sm">
+              <h3>Windows</h3>
+              <Image
+                class="size-4"
+                src="/windows.svg"
+                alt=""
+                width="16"
+                height="16"
+              />
+            </div>
+            <div class="flex flex-wrap gap-x-4 gap-y-2">
+              {
+                environmentItems.windows.map((item: EnvironmentItem) => (
+                  <ToolBadge name={item.name} href={item.href} />
+                ))
+              }
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <section class="mb-12">
-      <h2 class="font-heading text-primary mb-6 text-2xl font-bold">
-        Experience
-      </h2>
-      <div class="space-y-6">
-        {
-          experienceItems.map((item) => (
-            <ExperienceCard
-              period={item.period}
-              company={item.company}
-              position={item.position}
-              technologies={item.technologies}
-            />
-          ))
-        }
-      </div>
     </section>
-    <section class="mb-12">
-      <h2 class="font-heading text-primary mb-6 text-2xl font-bold">
-        Projects
-      </h2>
-      <div class="w-5/6 space-y-6">
-        {
-          projectsItems.map((item) => (
-            <ProjectCard
-              title={item.title}
-              href={item.href}
-              websiteUrl={item.websiteUrl}
-              technologies={item.technologies}
-              primaryLinkAriaLabel={item.primaryLinkAriaLabel}
-            />
-          ))
-        }
-      </div>
-    </section>
-    <section class="mb-16">
-      <h2 class="font-heading text-primary mb-4 text-2xl font-bold">
-        Dev Environment
-      </h2>
 
-      <div class="text-primary mb-4 flex flex-row items-center space-x-2">
-        <h3>Unix</h3>
-        <Image src="/mac.svg" alt="Mac icon" width="23" height="23" />
-        <Image src="/linux.svg" alt="Linux icon" width="27" height="27" />
-      </div>
-      <div class="mb-8 flex flex-wrap gap-2">
-        {
-          environmentItems.unix.map((item: EnvironmentItem) => (
-            <ToolBadge name={item.name} href={item.href} />
-          ))
-        }
-      </div>
-
-      <div class="text-primary mb-4 flex flex-row items-center space-x-2">
-        <h3>Windows</h3>
-        <Image src="/windows.svg" alt="Windows icon" width="24" height="24" />
-      </div>
-      <div class="flex flex-wrap gap-2">
-        {
-          environmentItems.windows.map((item: EnvironmentItem) => (
-            <ToolBadge name={item.name} href={item.href} />
-          ))
-        }
-      </div>
-    </section>
-    <footer class="pb-12">
-      <p class="text-accent">
-        © {currentYear} Dylan van Heerden. All rights reserved.
-      </p>
+    <footer
+      class="border-border flex flex-col gap-2 border-t py-8 text-sm sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p class="text-secondary">© {currentYear} Dylan van Heerden</p>
+      <a
+        class="text-accent hover:text-primary transition-colors duration-150"
+        href="#top">Back to top ↑</a
+      >
     </footer>
   </main>
 </Layout>
