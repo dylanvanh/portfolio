@@ -15,14 +15,14 @@ export const GET: APIRoute = async (context) => {
   );
 
   return rss({
-    title: `${SITE_NAME} Blog`,
+    title: `${SITE_NAME} Writing`,
     description: SITE_DESCRIPTION,
     site,
     items: posts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.pubDate,
-      link: `/blog/${post.id}/`,
+      link: `/writing/${post.id}/`,
     })),
     customData: "<language>en-ZA</language>",
   });

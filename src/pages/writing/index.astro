@@ -15,7 +15,7 @@ const formatDate = (date: Date) =>
 ---
 
 <Layout
-  title="Blog"
+  title="Writing"
   description="Technical writing by Dylan van Heerden about Bitcoin, the Internet Computer, and software engineering."
 >
   <main class="mx-auto max-w-[760px] px-6 py-8 sm:px-8 sm:py-12">
@@ -65,7 +65,7 @@ const formatDate = (date: Date) =>
           {posts.map((post) => (
             <li>
               <a
-                href={`/blog/${post.id}`}
+                href={`/writing/${post.id}`}
                 data-astro-prefetch
                 class="group block py-7"
               >
