@@ -1,0 +1,21 @@
+{
+  "name": "Dylan van Heerden",
+  "short_name": "DVH",
+  "description": "Software engineer in Cape Town building Bitcoin, Internet Computer, and web applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121317",
+  "theme_color": "#121317",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Dylan van Heerden">
+  <rect width="512" height="512" rx="112" fill="#121317" />
+  <path
+    fill="#f0ede6"
+    fill-rule="evenodd"
+    d="M136 104h108c91 0 156 62 156 152s-65 152-156 152H136V104Zm80 72v160h25c49 0 79-31 79-80s-30-80-79-80h-25Z"
+  />
+</svg>
