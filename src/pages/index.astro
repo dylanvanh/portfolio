@@ -24,12 +24,19 @@ const environmentItems: EnvironmentItems =
   rawEnvironmentItems as EnvironmentItems;
 
 const currentYear = new Date().getFullYear();
+const websiteURL = new URL("/", Astro.site).href;
+const websiteSchema = {
+  "@type": "WebSite",
+  "@id": new URL("/#website", Astro.site).href,
+  url: websiteURL,
+  name: SITE_NAME,
+  alternateName: "DVH",
+};
 const personSchema = {
-  "@context": "https://schema.org",
   "@type": "Person",
   "@id": new URL("/#person", Astro.site).href,
   name: SITE_NAME,
-  url: new URL("/", Astro.site).href,
+  url: websiteURL,
   jobTitle: "Software Engineer",
   homeLocation: {
     "@type": "Place",
@@ -37,12 +44,16 @@ const personSchema = {
   },
   sameAs: SOCIAL_PROFILE_URLS,
 };
+const homePageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [websiteSchema, personSchema],
+};
 ---
 
 <Layout
   title={SITE_NAME}
   description={SITE_DESCRIPTION}
-  structuredData={personSchema}
+  structuredData={homePageSchema}
 >
   <main id="top" class="mx-auto max-w-[760px] px-6 py-8 sm:px-8 sm:py-12">
     <header class="mb-20 sm:mb-24">
