@@ -1,0 +1,20 @@
+# Dylan van Heerden
+
+> Personal website of Dylan van Heerden, a Cape Town software engineer building specialised software across AI, crypto infrastructure, and the web.
+
+The site contains Dylan's work history, selected projects, technical environment, and writing about Bitcoin, the Internet Computer, and software engineering.
+
+## Main
+
+- [Portfolio](https://dylanvh.com/): Work history, selected projects, technical environment, and contact links.
+- [Writing](https://dylanvh.com/writing): Index of Dylan's technical articles.
+
+## Articles
+
+- [Isometric: Bitcoin Options Without leaving the Bitcoin ecosystem](https://dylanvh.com/writing/isometric-native-bitcoin-options): How Isometric provides fully collateralised Bitcoin covered calls with ckBTC and automatic settlement on the Internet Computer.
+- [BNPL on Bitcoin: Buy Ordinals Now, Pay Later](https://dylanvh.com/writing/bnpl): How Liquidium uses linked Bitcoin transactions, ICP canisters, PSBT signing, and package relay for non-custodial Ordinals financing.
+
+## Optional
+
+- [GitHub](https://github.com/dylanvanh): Dylan's open-source projects and contributions.
+- [LinkedIn](https://www.linkedin.com/in/dylanvanheerden/): Dylan's professional profile.
