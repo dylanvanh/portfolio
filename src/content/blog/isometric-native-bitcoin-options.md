@@ -8,9 +8,11 @@ image: "/blog/isometric-native-bitcoin-options.png"
 
 ![Bitcoin options built on ICP: Isometric and Internet Computer branding](/blog/isometric-native-bitcoin-options.png)
 
+> This article covers the ICP version, now called [Isometric Legacy](https://legacy.isometric.fi). The new [Isometric](https://isometric.fi) is built on Base.
+
 Covered calls on BTC, collateralised in BTC, settled on ICP.
 
-[Isometric](https://isometric.fi) ([@isometricfi](https://x.com/isometricfi)), created by [me](https://x.com/obonobza) and [@npm_luko](https://x.com/npm_luko), is launching in public beta soon. Writers earn premium by locking BTC against an offer. Buyers pay that premium for upside exposure until expiry.
+[Isometric Legacy](https://legacy.isometric.fi) ([@isometricfi](https://x.com/isometricfi)), created by [me](https://x.com/obonobza) and [@npm_luko](https://x.com/npm_luko), is the original ICP version. Writers earn premium by locking BTC against an offer. Buyers pay that premium for upside exposure until expiry.
 
 Isometric runs on the [Internet Computer](https://internetcomputer.org) and makes use of ckBTC for all transactions inside the platform.
 
@@ -103,7 +105,7 @@ Either way, the payout lands in a BTC balance the user can withdraw.
 
 ## Try it
 
-- **Trade:** [isometric.fi](https://isometric.fi)
+- **Legacy site:** [legacy.isometric.fi](https://legacy.isometric.fi)
 - **Docs:** [docs.isometric.fi](https://docs.isometric.fi)
 
 ## Dig deeper on ICP

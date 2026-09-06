@@ -1,8 +1,20 @@
 [
   {
     "title": "Isometric",
+    "href": "https://isometric.fi",
+    "technologies": [
+      "Solidity",
+      "Foundry",
+      "Base",
+      "TanStack Start",
+      "Cloudflare",
+      "Terraform"
+    ]
+  },
+  {
+    "title": "Isometric Legacy",
     "href": "https://github.com/isometricfi/isometric-mono",
-    "websiteUrl": "https://isometric.fi",
+    "websiteUrl": "https://legacy.isometric.fi",
     "technologies": [
       "Rust",
       "Internet Computer (ICP)",
@@ -41,23 +53,13 @@
   {
     "title": "Strava Bot",
     "href": "https://github.com/dylanvanh/strava-bot-rust",
-    "technologies": [
-      "Rust",
-      "Strava API",
-      "Docker"
-    ]
+    "technologies": ["Rust", "Strava API", "Docker"]
   },
   {
     "title": "BTC Transaction Nuke",
     "href": "https://github.com/dylanvanh/btc-transaction-nuke",
     "websiteUrl": "https://btc-transaction-nuke.vercel.app/",
-    "technologies": [
-      "NextJS",
-      "Typescript",
-      "BitcoinJS",
-      "RBF",
-      "Tailwind"
-    ]
+    "technologies": ["NextJS", "Typescript", "BitcoinJS", "RBF", "Tailwind"]
   },
   {
     "title": "Pixel Pythons",
