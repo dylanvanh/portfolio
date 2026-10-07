@@ -1,26 +1,44 @@
 [
   {
-    "period": "2024 - Present",
+    "period": "2026 - Present",
+    "company": "Isometric",
+    "position": "Founder",
+    "description": "Onchain options trading."
+  },
+  {
+    "period": "2024 - 2026",
     "company": "Liquidium",
     "position": "Senior FullStack Software Engineer",
-    "technologies": ["Next.js", "React", "NestJS", "Typescript", "Rust", "Bitcoin", "Blockchain"]
+    "description": "Built Bitcoin and cross-chain lending products, including Ordinals purchase financing integrated with Satflow.",
+    "technologies": [
+      "Next.js",
+      "React",
+      "NestJS",
+      "Typescript",
+      "Rust",
+      "Bitcoin",
+      "Blockchain"
+    ]
   },
   {
     "period": "2022 - 2024",
     "company": "Entelect",
     "position": "Software Engineer",
+    "description": "Built FNB data collection services used by millions of banking customers.",
     "technologies": ["Spring", "Java", ".NET", "C#"]
   },
   {
     "period": "2022 - 2022",
     "company": "Franc",
     "position": "Junior Software Engineer",
+    "description": "Built mobile and web investment features at Franc while completing university studies.",
     "technologies": ["Flutter", "Dart", "Flask", "Python", "Vue", "Javascript"]
   },
   {
     "period": "2020 - 2022",
     "company": "Eduvos",
     "position": "Bsc Information Technology : Software Engineering",
+    "description": "Graduated magna cum laude.",
     "technologies": ["Python", "C++", "PHP"]
   }
 ]

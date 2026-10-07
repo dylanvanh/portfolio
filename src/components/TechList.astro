@@ -1,0 +1,16 @@
+---
+const { technologies } = Astro.props as { technologies: string[] };
+---
+
+<ul
+  class="text-secondary mt-2 flex min-w-0 flex-wrap gap-x-2 gap-y-1 text-xs leading-5"
+>
+  {
+    technologies.map((technology, index) => (
+      <li class="flex items-center gap-2">
+        {technology}
+        {index < technologies.length - 1 && <span aria-hidden="true">·</span>}
+      </li>
+    ))
+  }
+</ul>

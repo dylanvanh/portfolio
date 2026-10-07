@@ -1,24 +1,15 @@
 ---
 import type { ExperienceItem } from "../types/ExperienceItem";
+import Entry from "./Entry.astro";
 
-const { period, company, position, technologies } =
+const { period, company, position, description, technologies } =
   Astro.props as ExperienceItem;
 ---
 
-<article>
-  <p class="text-accent mb-2 text-sm tabular-nums">{period}</p>
-  <div class="text-primary leading-6 text-pretty">
+<Entry description={description} technologies={technologies}>
+  <Fragment slot="title">
     <span class="font-medium">{company}</span>
     <span class="text-secondary"> · {position}</span>
-  </div>
-  <div class="text-secondary mt-2 flex flex-wrap gap-x-2 text-sm leading-6">
-    {
-      technologies.map((tech: string, index: number) => (
-        <span class="flex items-center gap-2">
-          {index > 0 && <span aria-hidden="true">•</span>}
-          {tech}
-        </span>
-      ))
-    }
-  </div>
-</article>
+  </Fragment>
+  <span slot="meta">{period}</span>
+</Entry>

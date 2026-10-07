@@ -8,10 +8,5 @@
     { "name": "raycast", "href": "https://www.raycast.com/" },
     { "name": "aerospace", "href": "https://github.com/nikitabobko/AeroSpace" },
     { "name": "sketchybar", "href": "https://github.com/FelixKratz/SketchyBar" }
-  ],
-  "windows": [
-    { "name": "intellij", "href": "https://www.jetbrains.com/idea/" },
-    { "name": "ideavim", "href": "https://github.com/JetBrains/ideavim" },
-    { "name": "WSL2", "href": "https://ubuntu.com/wsl" }
   ]
 }

@@ -5,5 +5,4 @@ export type EnvironmentItem = {
 
 export type EnvironmentItems = {
   unix: EnvironmentItem[];
-  windows: EnvironmentItem[];
 };
