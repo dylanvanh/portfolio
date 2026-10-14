@@ -5,5 +5,5 @@ export const DEFAULT_SOCIAL_IMAGE_PATH = "/opengraph.png";
 export const SOCIAL_PROFILE_URLS = [
   "https://github.com/dylanvanh",
   "https://www.linkedin.com/in/dylanvanheerden/",
-  "https://x.com/obonobza",
+  "https://x.com/vanhdylan",
 ];

@@ -12,7 +12,7 @@ image: "/blog/isometric-native-bitcoin-options.png"
 
 Covered calls on BTC, collateralised in BTC, settled on ICP.
 
-[Isometric Legacy](https://legacy.isometric.fi) ([@isometricfi](https://x.com/isometricfi)), created by [me](https://x.com/obonobza) and [@npm_luko](https://x.com/npm_luko), is the original ICP version. Writers earn premium by locking BTC against an offer. Buyers pay that premium for upside exposure until expiry.
+[Isometric Legacy](https://legacy.isometric.fi) ([@isometricfi](https://x.com/isometricfi)), created by [me](https://x.com/vanhdylan) and [@npm_luko](https://x.com/npm_luko), is the original ICP version. Writers earn premium by locking BTC against an offer. Buyers pay that premium for upside exposure until expiry.
 
 Isometric runs on the [Internet Computer](https://internetcomputer.org) and makes use of ckBTC for all transactions inside the platform.
 
@@ -114,4 +114,4 @@ Either way, the payout lands in a BTC balance the user can withdraw.
 - [Bitcoin integration](https://docs.internetcomputer.org/guides/chain-fusion/bitcoin/): the native Bitcoin API ICP exposes to canisters.
 - [Threshold signatures](https://docs.internetcomputer.org/concepts/chain-key-cryptography/): how ICP signs Bitcoin transactions across subnet nodes.
 
-Source: [announcement on X](https://x.com/obonobza/status/2049922582179139989).
+Source: [announcement on X](https://x.com/vanhdylan/status/2049922582179139989).
