@@ -1,0 +1,21 @@
+{
+  "name": "Cape Town Cycle Tour",
+  "date": "2026-03-08",
+  "city": "Cape Town",
+  "country": "South Africa",
+  "location": { "lat": -33.92, "lng": 18.42 },
+  "kind": "ride",
+  "distanceLabel": "108 km",
+  "time": 13329,
+  "note": "Chain fell off again.",
+  "legs": [
+    {
+      "sport": "bike",
+      "strava": "17644247301",
+      "distance": 108309,
+      "time": 13329,
+      "elevation": 1269,
+      "polyline": "x|`nE{fnoBlF_V~@kL`KwBbQ{TjC{JtEie@~Rk^zM{`@~DsEtTeGfAwDc@}PlAgL~BcDhLoFzTq@lb@zQpYlDbH|NrW|Ito@v}@lGfE|FO~LeFdI{RbFuF~J~DvKmAdK`G~^wO~GsFjDWvDdB~Vp[dDxAl\\o@vTuIz[eHfRi@|J~BpeBtu@bMdB~e@Dh_Cy^~QVl{@fLvUs@p@iy@xVfCxDk@dh@yb@lTgUvQkLlWaEjl@v@l_@jLbv@~hAlFpDxVl[zFxClJy@jJhHfAfNwC|_@xIjV`HzLtDtCj`@`LhBgCrDgSdI_QjTyLvMoBfLpChUzQbPhVtGdE|GrAhKoDzT`@rWrJ~\\|PxWtFl]zBt`@{FhPqK`CeGrAcl@jF{c@nKy`@dEqJd_@id@~VyNlKoLbOmI`MwApQmKfe@aDxDuDbJ_D|KkM~NwDnJsOjSqHnYcGnUbLrJO`V_Hbi@XbEzBtBrF~FlDvLrVrKdM{@pFyUjf@sIjj@m^tdAgc@pw@g\\tr@m\\t]qUvPiRj]aLnG_w@dL}t@t@mZfEYnCpElY}GdMn@zM_ClQ?zHqDpKoBfR{GhWEdE{HlV_L~NsGzEwOvXqI~JuWtMyFhG_PjG}OvVeFdDqMtQaMnUq[n\\_FlAmDlDuNfCiMdT_LyAsNcIuW]uRoO{G_CyIPiYvIsLaAt@cPeAyMu]cv@aFgOoQsvA}Nmt@iHuRyDoTeEoMa_@hMwMh@oYx[{KvV_OvJ_OhDi`@}AmYfDmGnD_DzGgFnYfBvUsBhIu@zMb@lGmBlKHzLqCtBjDzRk@rKkIdK{M`JcEYgHcHy@{JoC}G{E}@}ErDmImBuAiCgDCqAuBkGj@mGoEmGdFkECGkPjAwO{@iJuLOoK}G}EoHsAiJqCjDsBF_IyIcFFiPgG_FmFcNjFmFuAkAbJ_FJn@pJi@rCoBdBsER{BvEcEnC_Eo@yX|KmIlAkBdGsNeC}KnMgK`@{@lGb@~G`L|XFhIkc@nDySlHqLr@_RoBiI}Dk[mH{Ko@w_@fBsMlDqJGgPpHuLtDsJl@wDvFeGdBuB|GoCnAsJiBwD_LgJ_AeTfIoKUkJwSiG}EQeHcD_PeJmGaEqNoMcL]}NcH{HoFaBgF{JoNgMuNmRkIk@qRpCmF}I_DuByH^aE_BqCfA}UoJsAgHmC_DkEAoGlDoK@}]eN{ItByFmAuGrKeOzGkC]yBwE{GwDkVwEgOxB_H|JuRbD}A}AuA}JoCeDyMmCiGcH{KnI{FqNkEmCTwKkD{Gqf@wRwL}O}CsKoGmJcFuPvAiT"
+    }
+  ]
+}

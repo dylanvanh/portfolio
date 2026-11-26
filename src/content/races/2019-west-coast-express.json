@@ -1,0 +1,21 @@
+{
+  "name": "West Coast Express",
+  "date": "2019-09-08",
+  "city": "Cape Town",
+  "country": "South Africa",
+  "location": { "lat": -33.72, "lng": 18.45 },
+  "kind": "ride",
+  "distanceLabel": "54 km",
+  "time": 8172,
+  "note": "First West Coast Express. Back tyre exploded.",
+  "legs": [
+    {
+      "sport": "bike",
+      "strava": "2689554961",
+      "distance": 54295.9,
+      "time": 8172,
+      "elevation": 578,
+      "polyline": "bhslEagqoB_@^UI}DmHs@cBy@}AKy@DeCI{@_@]cAOmAg@gAgAkAqBsByEkCwD{E}I_@_Ac@q@Wm@Ks@@u@Rq@`@m@h@]zL{CbAOn@Dx@^hD|DZRLAlEeGL_@Ns@C{Aa@Uk@Eq_Ac@iO@s\\]gKFqCOkLCyHRuGj@{Ep@mGxAuEzAucBpp@eQpGkQ~G{EtBgWxJyBbAgPjGuExAm@Sa@g@}BiFo@iAkCkDuBqBcEkC{CuAeEkAkCa@y[iDkDq@mFaBqDqB}CwBgLgK_GmEeFuCmJqDaFkA}Ey@_E_@wEW{IFuK~@yG\\wC?oDMaGs@_Cg@aCq@_F{B}A_AcF}DmBeCs@sAHa@|DeFbJcJdAu@bCgAZGZDVTTr@tAnGdAhBn@^dAVnA?v@SjKyHnFwGtA}AbAaA~@o@|@iAxAgA|I}DvS{GvBiA|AmBl@yA\\_BTuCGsAWoB_@uAe@aAwTiYwEuFgCmD{RmVqBqCyKcNuAsBcHuI_AcAoAwBeJgNwNaTkB{A{B{@}AIkABcFz@]KOWYwBAy@Ho@nCyJfJ_^\\{@l@_A`FcFnA}Ap@wAj@_CTcCRsHAkG]gEqAgJGw@BYHSPKhSgE|GaBjGeAfm@_MlF{@lN{CbJoAvGWjE?jHb@|CF~v@fEpCVne@tBdBPhMr@jb@rBpj@zBzHTNWD]EqA_JmeA[qHCsIZuJRkCpAqJ`AsEhAkEn@wBdBmEv|@qfBlIyRlA_DfGcOdByDjAsDNk@?a@Uk@m@_@s@Sm@Dq@`@QXM`@Gt@Bd@Rn@p@x@hHpEvGlDvElCvHhDdJ|CpQvDnFv@bAXhKfBzEdA|Ep@vJdBjGvAjk@`KvThEvGzAfPxChDx@fGdAr@FnA`@vH|AnNpCvVrEvLfC`Gz@tE`@fDRvJVzEEfXuAbKs@~Ce@lEiBpFqEjAMx@BV\\Hh@XfPLtDs@fYoC|zAQnEQdC]hCe@fCc@xA[jBgAfEkBnIk@xBqAlGSf@kBjIi@vEMjELnDT~B`D~R~C~PlCrPZdCnCp]bDt]rHdm@ZdDDhFQpDMbAk@dDgEjPcAzEa@lDMvDt@l`ATvR~@xMrAzT`@|D\\tEh@|JJrDCdBK\\KDmE_@qBG{ABwCTap@lLqFh@_EMmC_@cNgEcCgAoBe@qD]yDByCZ_P|C_j@tJaDBgHdAqAl@oB|BiA|@m@XeARoBA}E_@eA]m@s@Oi@BOzAeBRI"
+    }
+  ]
+}

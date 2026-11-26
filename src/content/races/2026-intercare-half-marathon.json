@@ -1,0 +1,21 @@
+{
+  "name": "Intercare Half Marathon",
+  "date": "2026-10-04",
+  "city": "Cape Town",
+  "country": "South Africa",
+  "location": { "lat": -33.81, "lng": 18.47 },
+  "kind": "run",
+  "distanceLabel": "21.1 km",
+  "time": 6501,
+  "note": "10k and 21k PBs. Can definitely go faster, which is great. Wasn't sure what pace I could hold due to the recent running injuries.",
+  "legs": [
+    {
+      "sport": "run",
+      "strava": "20441963918",
+      "distance": 21170.9,
+      "time": 6501,
+      "elevation": 65,
+      "polyline": "drfmEy{soBGHKHUFSAOGIIMWKm@MSAGRWj@_AzAyBrBiCZ]vDaDTKDEfAs@fBaAJMHSBMAc@]wCIcB?iERcF@kAE_CKiBMcAMu@g@mBk@}Ak@mAq@gAs@eAUOe@I_@De@VmBfBeGdFiAjAu@jAc@|@a@`A]rA]tBQ|BCfA@r@Bx@b@hDJrB@fBEjBEn@C`BBv@HjATnATz@`AtBd@p@^`@f@b@ZPBNIr@IZSZ_BbBi@d@iBhAi@VeA`@sFjBgDxAgAj@qDtBcHrD{EbCuBjAyB`AyAl@kGtBoDfAiH~BaAX_Cv@eKvDeEvAgFnBq@RmFnBuDnAaLdEqIvCsBx@wFnBuA^}B`@sBRsBFiH?uERgCPcCXeADiD^uCT}AFiFJy@?qJJaD?oABiBC{BF{D@eBDi@Gu@H}AFcA?{EDmCD}ALaAJmAPmCp@_KnDcFlBwAb@q@XgDlA{Bd@eALw@FyAF]?{AGwC[CCCSDcACQQMoAc@mC_B_B}AICQBKHW\\KDKAIGcC}Bk@q@_@[yB{ByD}CqGiG}BwB[_@[i@m@cBOw@SqBQa@MKQEyBc@m@IiAEuBCkADoALgBXqAVkDh@gCj@gJ|AgDp@}F|@iBh@s@J[@qDp@sAPyAJoA?KNERAdBJVXNrB`@hAP\\EZIlAk@vD{ArAc@dEWpBB|AR|@PJFDR?l@PXzCbA~@b@rAz@b@TTDZBbBCzC?`@Bb@H`Bd@~CfA`Bt@nAx@nCdCv@x@HBJADILUf@u@DSCMSY}@y@AE?QrCyEtAuBb@_ANIP@RJvArAj@n@`B|Ax@~@t@n@fCbCj@b@r@p@tAhA~CvCbA|@lBfAdA`@h@PrA\\bAPx@JvAHtA?lAGfAMvAW`A[bAc@tCaAtBw@pAc@hBs@`KmDhBg@nCa@dBOtCIbA@|JIfHKhGApBGlEApAElG?vDGjFY`D_@nAIfDc@~BSzFSrHExAGvAM~Cg@~C{@ZMtI{C|CiAd@WVEHGdDgAjAe@dEwAzB}@pAa@tAm@bBg@pG}BxLqEhBk@`Ac@bO}EzBo@jC}@`A[zCiAv@_@ZKvAm@jB}@dDgBrBiA|BiArAu@lDiBlBiAfGaCt@Sr@YdCy@`@S|@e@v@i@Z]p@m@f@o@VSXG`AHd@?PIlAkAb@[ZOrAc@b@UZG"
+    }
+  ]
+}

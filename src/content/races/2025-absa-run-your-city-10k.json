@@ -1,0 +1,21 @@
+{
+  "name": "Absa 10K",
+  "date": "2025-05-11",
+  "city": "Cape Town",
+  "country": "South Africa",
+  "location": { "lat": -33.92, "lng": 18.42 },
+  "kind": "run",
+  "distanceLabel": "10 km",
+  "time": 3552,
+  "official": true,
+  "legs": [
+    {
+      "sport": "run",
+      "strava": "14442997857",
+      "distance": 10183.5,
+      "time": 3552,
+      "elevation": 39,
+      "polyline": "huymEefzoBhAbB\\Vb@d@r@pApAjB\\`@`@Xj@p@n@dAr@p@JR^b@^X@Ff@^NPn@`@r@l@~@h@b@d@bBjAx@t@~B`Bz@r@h@ZTX`CjBPPZP^JVVbAn@r@j@\\\\dAx@LFJJt@b@vBfBRTRPbAl@b@\\n@^j@f@|@j@`At@xBfBl@^j@Xn@j@PDpBzA|At@VVtAj@\\RvAj@PBx@XbBr@h@RfB~@hAh@bB`Af@PnAv@`@`@`At@x@x@jBvA\\\\z@j@hAhApDvCf@f@RTNT`AlAf@`ANLN\\RVBNR`@l@z@~@dBpAtB^d@jAnAzBvBv@|@TRRXlAnAb@l@j@j@pAxAvAlBNZ~@xAjBnC`@v@L\\n@x@vAlCd@r@nAnCrChFd@r@x@~ATf@d@t@^|@Vd@jAtCpAhCfArCV\\n@vAl@`AXj@xBbE`@lAVpB@\\CV@j@VpEChAJnDLvB^tD@j@AnB@`@CNB`@Cn@BvAA\\GhAId@SxAAr@DxDDr@Ct@DfCC|@BfBGnDHbGIvD_@lE_@`BCVm@dCYz@k@nA_@d@Q\\_AxAm@t@[n@[NANKXCl@g@xA_@t@QTO\\SVK\\YZ?RMh@INGTa@x@w@pAK^g@`AM\\ATMVMLELAJWZWh@eAbBENS^KLQl@g@p@GT]v@ADFNPL?Bh@f@BLx@v@FLb@h@HRNLJFBHf@CTBj@NHDFPFFt@zAXXb@x@H?NFfCjCPTVXLVBJVLPLf@Rb@f@HPBRTn@?PDHHDJNBDHDD\\JHJNJR@NFHBBJBJAJB`@\\VL^VPTn@j@TZ^^f@bAj@p@JZPNPBLHNTb@b@FBLNHNBRLNHXDFVPd@f@TND@NJRBTRHNL@JVJPNDDHLH\\^PV@TVZDP?Ri@~@y@bAYb@k@pAMb@OFUd@UPY`@KB[GKQu@i@a@c@UKOMS[EQEEYOa@e@U[OG]UIMEQe@a@i@u@UIIG[}@cAk@_@o@g@k@QESO[EQOKOGAQMOa@QIGIAUCEKCOKWi@"
+    }
+  ]
+}

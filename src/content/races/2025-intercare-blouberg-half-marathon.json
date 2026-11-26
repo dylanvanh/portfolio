@@ -1,0 +1,21 @@
+{
+  "name": "Intercare Blouberg Half Marathon",
+  "date": "2025-08-31",
+  "city": "Cape Town",
+  "country": "South Africa",
+  "location": { "lat": -33.81, "lng": 18.47 },
+  "kind": "run",
+  "distanceLabel": "21.1 km",
+  "time": 6916,
+  "note": "Zone 2 recovery run. Crazy to think this pace was my 5k two or three months ago.",
+  "legs": [
+    {
+      "sport": "run",
+      "strava": "15644420966",
+      "distance": 21120.9,
+      "time": 6916,
+      "elevation": 62,
+      "polyline": "lufmEcrvoBbBbEPRh@^NPDTCVEJMHaARu@d@uItHsAvAgAhB[r@a@nAYlAQfAMhAGdBBrBD`A\\rCJ|A?vCK|BAjABdAHhAXbBLn@f@tAVd@Xb@lA|AN\\DRCZM\\e@j@w@z@kBvAoAr@wAh@{Af@c@R{Bt@mD|AqCzAeEtBoBfAw@h@uAn@yBpA}EbCaA`@}FrBsFbBgDjAoBj@gDjAoAXcHfC_Ct@aG|ByDtAw@Vc@Jw@^kE~AaIpCYHoE`ByBr@k@VwAh@oA^qBt@}@`@sCx@iB`@gDd@qDJ_FCoDLmDReHp@wBVyEZuADeFDaABqIBiFJwC?iGDe@BY?g@Is@DIMSs@W{AKWOWUUiAo@WUU[o@wAUYYOqAe@WQc@k@_@{@YeBGq@c@uGa@_FMkAOq@[{@EU@SVm@b@mAb@eBFc@BeAEu@_@mBGq@@iAH{A?UKg@OWOOw@c@m@EsE?uAZi@Pk@\\qBdBa@Xw@Ze@LeB\\o@@{@Es@U}@c@]IUA}CBaAFmAXwEpAgARUASC_@Qg@[OAUF_JbEw@h@i@p@a@bAKb@Gf@Cd@@l@JnA^hC\\lBZdC^`EVhBHbB@tACr@Ep@YxB[rASl@Ul@S^GHg@`@oAzBMJU@SKqCkC{BaBeKuJe@q@q@aBc@aBGq@[qA{@s@u@QwBWgBIq@?gADcCV_Dp@aHhAcAT}GjA}KrBOFQPEHAL@j@PfADFTHrACnAGpB?v@HbBb@LFBJDp@LPd@P`Ct@j@ZjBpAXJj@DrC@fCAj@H^HjBl@x@\\t@Tf@TzCdBfA`AVLJEVYxAmCvBqDlAgB`@q@RSR?LFrAlA~EfFlG~FbAv@Z\\ZV\\\\f@b@TL|@`AVRpBlAv@ZlAb@zBd@|@Ht@FdA@|CQlAO~@S|Ae@`DmAt@]zRaHrBi@lCg@`DUjBEhNEjAEnIGjAEdMG|EGbEArG_@xJeAhE_@tCI`DCzCBrBEtBWrE_An@QrFwBjBo@fG{BfAYnBw@~JuDfMmEtTeI|IuCfBo@bHyBbAWlDmA`EeBdFgCl@a@bAk@fB{@~HeEfCwAzCoAnDoAfCu@p@WZOjAw@fAy@fAqATSZG`@Bh@@^G^Ux@w@"
+    }
+  ]
+}

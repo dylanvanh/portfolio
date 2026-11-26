@@ -1,0 +1,21 @@
+{
+  "name": "Cape Town Marathon",
+  "date": "2026-05-24",
+  "city": "Cape Town",
+  "country": "South Africa",
+  "location": { "lat": -33.92, "lng": 18.42 },
+  "kind": "run",
+  "distanceLabel": "42.2 km",
+  "time": 16704,
+  "note": "Found out at 28 km.",
+  "legs": [
+    {
+      "sport": "run",
+      "strava": "18634278529",
+      "distance": 42642.8,
+      "time": 16704,
+      "elevation": 240,
+      "polyline": "zc|mEmsioBiAyGmAcZ?sAR_AjAgBbB_AtAyA`EyHnC_EvAmDbAmA`@Of@sAhA}AdEuD^JrArB`CpEdHzKzAxC^ZR@|@g@zKgMz@iBXyATsGXoDlA_DtAoAdO}Hh@u@He@G]yCaF_@eAg@kCQ_DLqCVqB`@wA`A}BnNqWdJmSfAaBzBeBpASxBNpB`AxHzJjAbAx@`@fCZ`Kq@nDu@xBuAjMeOhBoCnAgChAyDr@_F?k@GWWQq@EiSa@c@EMWXwHReC|@_ElAuLd@eClC{T~Ha]jAqCpNkTvDaFbOsSvH_HhEyCnNeL|KqFj[kMfCa@tESvNQjGp@vPzC~Ff@vEhCz@T|Hd@vBhAxDfEhJdDlJzDv[|IzIfBnB@pBQXa@\\wCb@qAbBeBjBaA|AWjAH~FKzEJfAIjERzESrB_Ax@UxBXNU@Y]eBc@i@]CiA`Bu@Xc@BsF{A{CeA{BkA_QsLsDcBgFgBoDeBqE{AaSqEsQuF{OcG@cA^cCdA}DpBeIhA}CbCiDnAyBnDuK~Kw^Mk@uAeAiHwEmAYs@Ba@NiN|LuDjCoChAuHhIqHvCcAJ{BIqYyAsEo@eCm@WDWZ_DrGi@pAAThC|CNBXh@PDfA`BnBdBnAlBfAx@Vd@pAl@hWdIvBX`CG\\RNbBEZ{Al@}DvEeHdFgD~@eBTeFKeMuBoReEaLBwJnAeH\\oBOoIgB_CCiAJgPdEeBlAoDpFwAnAuOnHuEx@kA`@iAbBc@~A{@hL}CnR{@|GiDtT_@pCArB_@~@e@vBoAlHo@vHiA`VoAnQiAzWKvXHnQZzC`AbGHbBXRhADLNDX@lAk@vXHpAApCU|Gn@fDGXwEjHiBpBeGnKq@n@y@dB_AbBdG`HNt@T\\nHjH~AvBjCtCt@h@|BhCjB`B~AxBvGrHaDtBu@JcLkEwBBa@O{@wAyEuFaEaE{DaFeCyC_KeLcCaCk@qAyAgAuAwAiBtB}@~AkClC_GfImWxKyGpFgNtPyAzF[x@cDhBORd@nAOpBZj@Iv@c@~AIpC\\vFz@b[PvKVxEHjFLnAORkDjAKP@b@j@lBp@hDzAjCnDdEn@~A`BnHZp@xGbJpAnB~CfBnC`Al@l@nCnAjE|BrKrBjDrAj@\\Vd@lAjAb@xA`BxDfCpJ|CvGfAbDz@bBH\\E\\e@L_@YgAcDkD{Ha@[wBg@YUYm@OqBn@aD@aC]oAkAeCq@}@mA{@eCmAkL_CwSaKw@m@cAoAaHaKYo@{BcJ}EiGaAcB_AoEsCeIY}AEmAFaBrAyLb@qHBiC"
+    }
+  ]
+}

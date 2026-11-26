@@ -1,0 +1,71 @@
+---
+import { decodePolyline } from "../lib/races";
+
+interface Props {
+  polyline: string;
+  label: string;
+  class?: string;
+}
+
+const { polyline, label, class: className } = Astro.props;
+
+const points = decodePolyline(polyline);
+const midLat = points.reduce((sum, p) => sum + p[0], 0) / points.length;
+const k = Math.cos((midLat * Math.PI) / 180);
+const xy = points.map(([lat, lng]) => [lng * k, -lat]);
+const minX = Math.min(...xy.map((p) => p[0]));
+const maxX = Math.max(...xy.map((p) => p[0]));
+const minY = Math.min(...xy.map((p) => p[1]));
+const maxY = Math.max(...xy.map((p) => p[1]));
+
+const W = 400;
+const H = 260;
+const PAD = 28;
+const scale = Math.min(
+  (W - PAD * 2) / (maxX - minX || 1),
+  (H - PAD * 2) / (maxY - minY || 1),
+);
+const offsetX = (W - (maxX - minX) * scale) / 2;
+const offsetY = (H - (maxY - minY) * scale) / 2;
+const fitted = xy.map(([x, y]) => [
+  offsetX + (x - minX) * scale,
+  offsetY + (y - minY) * scale,
+]);
+const d =
+  "M" + fitted.map((p) => `${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join("L");
+const start = fitted[0];
+const finish = fitted[fitted.length - 1];
+---
+
+<svg
+  viewBox={`0 0 ${W} ${H}`}
+  class:list={["course-map block w-full", className]}
+  role="img"
+  aria-label={label}
+>
+  <path
+    d={d}
+    fill="none"
+    stroke="var(--color-accent)"
+    stroke-width="2"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+    vector-effect="non-scaling-stroke"></path>
+  <circle
+    cx={finish[0]}
+    cy={finish[1]}
+    r="4"
+    fill="var(--color-background)"
+    stroke="var(--color-primary)"
+    stroke-width="1.5"></circle>
+  <circle cx={start[0]} cy={start[1]} r="3.5" fill="var(--color-primary)"
+  ></circle>
+</svg>
+
+<style>
+  .course-map {
+    background-image: radial-gradient(hsl(220 7% 19%) 1px, transparent 1px);
+    background-size: 14px 14px;
+    background-position: center;
+  }
+</style>

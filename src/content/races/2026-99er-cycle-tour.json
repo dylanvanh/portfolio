@@ -1,0 +1,21 @@
+{
+  "name": "99er Cycle Tour",
+  "date": "2026-02-07",
+  "city": "Cape Town",
+  "country": "South Africa",
+  "location": { "lat": -33.83, "lng": 18.65 },
+  "kind": "ride",
+  "distanceLabel": "94 km",
+  "time": 10870,
+  "note": "Spoke broke, chain fell off, derailleur let me use half my gears, couldn't use the small cog. Just happy my rust bucket got over the line.",
+  "legs": [
+    {
+      "sport": "bike",
+      "strava": "17313378101",
+      "distance": 94064,
+      "time": 10870,
+      "elevation": 852,
+      "polyline": "`_omEui|pByD\\{AY{MiJyB_AgB[sHF}H`A_D`@mI`C[AWSkDsEaBuAim@c\\iBcAeCkBi\\eXcCiCgHqLoZae@y^il@oAeBqx@sv@qJqHEWt@eC`@yBRiCCaDQmB_@kBk^}aAgA_Eq@gEo[ujDu@{F_AcEiAkDwCcGoBsC}PaTWAoIlD}HdBwHd@_XCiDJiGx@sD`AqEpBuCjBkw@lj@{DrBeGpBsEz@yFd@cp@GgEN{En@cPxD}C`AoB`A{B`BsArA}OdVkEfFkCvB{BrAeKhEiDpB_DjCaCdCcDbFy|@v{AoE~GiFvGgGpGwWjWgPzO_CnByCjBsDxAgBb@mDd@cCHaEMqdB{Pq`AeEch@eBwGc@sJoAcIoBsTuHsGiCeeBw}@{EuBgGmBes@mQeKeBwjD{ZuPsBsJsBwJuCiLsEi_Ay`@qC}@_Fq@uGD}dA~OcHn@eGP}eChDsQWyv@uEqK?_d@t@mCP_C^}C~@sF|C_YbWsZpSkCbAmD|@me@xJ{HrB{qA|i@{Ex@wECwB_@cBi@mKiFYFMXJnAj@pAzU|WdAvAj@rAvBnJf@dEhBdj@ZnGb@|DbBlFrX`u@`BtDdI`OtCrEt^l\\nCpBfBj@lNdCzg@xGhAEpF{@dVgHvB]pCJlCf@zHdElIrHzCnBlC`Av\\jHxCR|FBlETdCj@lC`A|[bMte@dXli@dVpC|A|iBn}A~CrBnChAfOhC|a@vFfQXtkAh@rWVfGbBt[vKflBrm@`I~BbHbBjAf@|CjBtFxDlFfExBfA`wAt[|aBp]fbAhWtBfA`Z`TvMjGtAbAjZf_@dAhArAbAfE`BpJjArFjA\\j@|@vDtBxCHfCZn@RHTIpBkDfCgCfCwAdZoNvA}@~@cAp@eA~@{CRaDEuAQoAaLuf@qGaZYoEGmCLiGh@iEp@}C|@yCz@oB|@}A`C_DpBoBvFqEbAeA`BaCrCiGhFoMz@uCjAaGVw@LI|FTzSnBv]|F~D^rEKjPyAlFaAjC_AzBgAll@{`@vCcB~Ak@|Bg@dCQzCBrCXrBf@lf@rPtBhAzAfA|A~AxApBlAdCnFlN|@hBfB|BbBjA~Al@nDf@`YxArD?pFi@|EoArGuCpN}HfGsB`d@gGnFg@tG]rHS|IAf_@~Ap~@vErK^rBKvB[vC{@|LiFnCoBpQoP|DeChF_CzC_AhJwApbAkBbh@_HvFe@~BLlCj@bBv@~HjFnFnBrBj@jCZnFNzEWzDq@~[cK"
+    }
+  ]
+}

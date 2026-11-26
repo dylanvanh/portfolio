@@ -29,8 +29,11 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.3.3",
+    "@types/d3-geo": "^3.1.1",
+    "@types/topojson-client": "^3.1.5",
     "@typescript-eslint/eslint-plugin": "^8.48.1",
     "@typescript-eslint/parser": "^8.48.1",
+    "d3-geo": "^3.1.2",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^9.1.0",
     "playwright": "^1.57.0",
@@ -38,6 +41,8 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.3.3",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2",
     "wrangler": "^4.112.0"
   }
 }

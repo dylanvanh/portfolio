@@ -1,0 +1,20 @@
+{
+  "name": "Cape Town Cycle Tour",
+  "date": "2020-03-08",
+  "city": "Cape Town",
+  "country": "South Africa",
+  "location": { "lat": -33.92, "lng": 18.42 },
+  "kind": "ride",
+  "distanceLabel": "108 km",
+  "time": 14496,
+  "note": "First Cycle Tour. I feel like my legs have been shot.",
+  "legs": [
+    {
+      "sport": "bike",
+      "strava": "3164472347",
+      "distance": 108367,
+      "time": 14496,
+      "elevation": 0
+    }
+  ]
+}

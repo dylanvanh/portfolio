@@ -1,0 +1,20 @@
+{
+  "name": "Slave Route Half Marathon",
+  "date": "2025-06-01",
+  "city": "Cape Town",
+  "country": "South Africa",
+  "location": { "lat": -33.93, "lng": 18.42 },
+  "kind": "run",
+  "distanceLabel": "21.1 km",
+  "time": 8357,
+  "legs": [
+    {
+      "sport": "run",
+      "strava": "14658759269",
+      "distance": 21554.1,
+      "time": 8357,
+      "elevation": 285,
+      "polyline": "xganEwxmoBjB_CL_@t@o@`@kAvAaBxFcJzBoF|BwIp@cADcAXmAlDqLv@sBtAoB~AqELOf@VjC|BPp@Cf@mClKOjA?vA^bEUxCqBfH{DjPs@zAgDlDr@dBhDnFRz@oCnBuBpBq@Dw@nBmB|Ck@zAw@z@iBjDgAxAMp@_@n@A^\\j@rG`GnDvElHhGVMdAsBbEfAHOEm@FYfZYJ^ZrEL`@NfCKNWLmI^a@b@{F`M_@l@a@?kDqBiA_@kAcAu@[{@u@w@kAoAeAs@Xg@MiE{EyBkBaAyA}CyC{AsBeDaDUo@a@c@oBqAEo@}@]]g@eAu@}@qAg@W{@t@k@bA]z@_@HsArAc@PUn@^j@pAt@rBhBFX~@jA`A|@b@bAd@\\Ff@oBbBwAeAiAsAQg@QOW@Fi@oABQ_@{@e@e@_A[GEJa@DMNPt@Q?Yd@oATUj@F~@GLPDP`@t@ZCb@aEjGyCdAYZv@tHDvCLvAuBjAuARi@OyAiBs@g@eDy@eBAi@MYw@IqBPU`@Ah@jA`A^pGGxCp@`@EVSFa@_AcC]uBB{@zCqDHYuBcBkDqEaDgDeAo@o@}@gAy@WaAa@k@WCmBuBWIiFjCoFbBuAv@wFpBcGlFmLdN_A~Aa@zBq@x@cBjDc@VeA?qAhBAvBKp@Wf@IjA`@~NEhB}CpDw@zAcB~AMb@yA~B{AnBsK`KWEGgAc@iAiCiMUsBoAiFOoHS_AMyC[UwAFWc@c@yMPy@~@cBhCcBnCcE`GyJjAsC~@{ATSRH|BrDbBlDQl@gCvB[jBF`@NR`A{@n@KtBdDzB`GsAtAaDxB_A`Ai@bAxBlCzBzC`CtB^DnBsFHo@CqB_A}B@]lCkDv@o@fA_@r@_Bz@y@~A_Cd@eAfMsOrG}FHqAa@cCtAk@dAy@vCw@NHd@rA@b@\\b@`@SFWu@iC@YfKeERLnA~C`@TrDwAz@E|AkBvD{Fp@m@xAcCr@i@Ka@kAc@Wy@`@u@z@O^cA\\Ep@iBd@g@PBvAnBdB`B`BxBn@j@\\B\\v@tAjA@b@nAdA^t@|@BZx@f@VjF{HSq@SEVE^g@v@mBEYgAkAs@YEYq@m@@[hDkG`EqGCk@o@oCDaDc@My@kASc@Es@sB{@STs@`DF^`Ax@Tb@M~@FHAt@{@bB"
+    }
+  ]
+}

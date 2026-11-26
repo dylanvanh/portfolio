@@ -1,0 +1,38 @@
+{
+  "name": "Ironman 70.3 Mossel Bay",
+  "date": "2026-11-22",
+  "city": "Mossel Bay",
+  "country": "South Africa",
+  "location": { "lat": -34.18, "lng": 22.15 },
+  "kind": "triathlon",
+  "distanceLabel": "70.3",
+  "time": 21297,
+  "note": "6:50:30 in 2025, 5:54:57 in 2026.",
+  "transitions": [467, 477],
+  "legs": [
+    {
+      "sport": "swim",
+      "strava": "21081894492",
+      "distance": 1960.5,
+      "time": 2354,
+      "elevation": 0,
+      "polyline": "jbroEspbfCq@eCa@yBa@mAU{@Q]MGI?sCj@q@TaEnBq@`@kAj@c@N}A\\mBl@wBz@oAl@cCdAw@Zo@N_AJ]Hc@PULMNIPEPAVDp@`AbDNt@VfBLh@JdAPbAz@bDPvALn@f@~AJfAXxAv@`C\\x@b@dBRn@\\zBFt@Hj@Rd@JHjA[?@DALIHA"
+    },
+    {
+      "sport": "bike",
+      "strava": "21081894695",
+      "distance": 87355.3,
+      "time": 11046,
+      "elevation": 1247,
+      "polyline": "llqoEmaafCNgCb@EZT]lKaAfGi@~BH^P?n@y@~ByDzKsXp@gAzAcBbDaBtV{IfB]nCA|ARrBt@nBdBbCxEb@zCFzBOtC_E~TUrBSzMUjI[`h@}@z{@GzQo@li@@fNMlR[rQgCh~CYpOe@rv@o@|n@GdTc@~\\Oh]WbNm@zx@W\\wAd@a|Abd@q`AzXkCpAeD|C}AjC}@dCu@`ES`E_FtpDc@fI[pCw@bEo_@lcBgAzCuStc@uCvDagC`kBmPlLsf@p^gDfD_DnEoAbCoAfDeBlG_AtGiD|o@WxK?`B^hGnHrm@p@pJ@bKmAl~A@pHe@nXs@rHsBbJoAfDqWtk@}AtFc@fDSpD@|CXtFbKx~ARpIEnEYrFaF~v@e@|D_AtCq@nA{BjCgEfEcA|Ae@vAM~@?fBRhBrCbI^hBFhAKnDBdAP~@|BxFz@`DDtAWlC_@jA}@vAi@b@}Ar@{BNsI]mARkAd@uArAcC|E}AvBuPjLsBdCkAzB_AzCi@`EIlDLhRO~Dc@~CwA|FeGjN{AlGaAdH{Dpb@gArGyBlIq\\~}@wBlEyC`DwOpKcDjCwHfHiA~AaAbCi@zBqAfOi@xCcB`DuFvGuA~BuWvs@rWct@|BoDtEkFzA}CXeARcBd@yGn@sFb@kBr@eBpAoBlIyHzEuDjL}H`EgE`CiFh\\m}@|AyFxAqIxBoTbAsMt@sFr@cD|@wCrGuOnA_GTyBJ{EKqK@iH\\qDd@oBx@{BhAuBzBiChMmIpBgBpAsB`BgDtAaBtAq@fBUbI\\bCUjAe@fAcAx@aBVgALkCKiAg@oByA_Dy@eCO{BLsCIkBs@kCyAqD_@sA[wC@}@b@gCr@{AzG}GpAgBhA}Bn@eCt@iJjE{q@TcG@cE_@aKkKi`BEoGLoCXaCh@oCpA_EjS{c@|BkF`BsE~AiHp@eIl@}k@~@exACkHo@eIaHej@a@iFKgHRsGdDep@~@oH~AkGvA{D`CiEpCqDpCmClwDcqCxHiGfBaCtSyc@tAeEv^caBdAsF`@iD\\aK|EkoDNiCj@_Dx@iCz@mBz@oAjBeB`DmB~vCq{@lIgCJWtL}kNLgYf@ea@f@iv@`Ay~@f@oEzDeTLiA@{DYmC[yAeBiDgAiAsA{@cDy@iBAkC^kXpJoC`B}AjBmLpYcE|Ga@XS]Ba@zBkKh@{J?e@KOm@HKdB"
+    },
+    {
+      "sport": "run",
+      "strava": "21081894530",
+      "distance": 21095.7,
+      "time": 6953,
+      "elevation": 365,
+      "polyline": "jlqoEy_afCLuDPSf@BJWJoC^aEhAwGl@gBp@_A`Ag@zJuCr@[To@hAmAlB}CvGcO|@eCReCGi@c@}AmAkCyCuFQQ[A}@aAF[MeAPa@N@TVVhAr@d@tETLw@BiCF_@FG|AITmBbBkDj@g@t@UTSNoCF_I^aOKSu@M_EQyAm@o@CK_@b@oBKwAVSPcA@eAQ]AUTeAH_BRi@d@i@nAs@j@s@EEQNb@s@RcDIyAd@U|@?|Bs@zAAV]\\VRvA[r@?fAe@JwDLk@t@Mx@LjA`A~B?nCS~KQhDKpLMlE@tBS`ECdEYlJa@~Ek@vLi@|AeBlB_@nAq@hDUp@{EtHwBxBaCvAgMtDsB~@{@hAmAvFYvBCAZyC`@sBz@{BdAeAnK_DdAi@Tk@`AgAvBaD`H_Pr@oBNgB?k@s@}BwCgGsA}BMIWA{@{@D_@Mm@Jk@NK^TThAf@^`ALbDHJgAAuAL_ANGtAETaBvA_Dv@}@hA]\\cQNeEF_EE_@e@YkESsAc@}@KKa@b@uBKqAXUNcA@w@Uu@R}@NyBHSf@q@lAo@p@y@?GQPEEb@g@PoDKmAf@[x@CbCs@bBCLUHCRLJ\\LdA_@t@?dA_AP_D@e@v@Mz@Hz@`ApCItLWbHYlSKtBOdKKjBAhCOfDe@xF]`IObAk@jAeAbA[n@_@nAe@jC[x@}EtHmAxA_BhAkB|@aA^gKpCo@Vu@n@g@bAeAdFYvBE@FmAh@{C\\iAB]h@cAfAcAlFeB|EwAVq@|@}@hCcEtHkQ^kBDy@W_ASgAgEwIs@aAYE{@}@Ba@K]?_@Pa@P@RVVdAd@\\dFXT}EVKlAE`@eCxAqCn@k@hA_@TkMZoOKS[I{EYuAg@q@IGa@b@kBCo@Ke@ZSL}@@gASs@Pu@JaBPs@d@o@dBgAZe@CCSN^i@BWPqCI{Af@Wx@ArBo@lBGNWL?Xb@LhA_@n@F`ACJcAP}CD_@f@Qz@DfAbAzCIxIObFUrL?tCOjEAjCUnG?jCM|AEzCObCU~Ae@fMM`Ag@tAwA|AO\\e@~Ae@lCc@dAuFlIkAfAqC`B{MvDqAn@w@bAWt@eArFKfAGDZyCv@mDx@{AnA}@pJqC~@a@\\w@j@i@nAgBrAiCDWW_@YBiB|Dg@b@UJ_@WqBx@"
+    }
+  ]
+}

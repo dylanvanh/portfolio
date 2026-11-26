@@ -1,0 +1,319 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import RaceMap from "../../components/RaceMap.astro";
+import runBests from "../../content/data/race-bests.json";
+import {
+  KIND_LABEL,
+  byNewest,
+  formatDate,
+  formatTime,
+  raceDistance,
+  type Race,
+} from "../../lib/races";
+
+const races = (await getCollection("races")).sort(byNewest);
+
+const totalKm = races.reduce((sum, r) => sum + raceDistance(r), 0) / 1000;
+const firstYear = Math.min(...races.map((r) => r.data.date.getUTCFullYear()));
+
+const cityMap = new Map<string, Race[]>();
+for (const race of races) {
+  cityMap.set(race.data.city, [...(cityMap.get(race.data.city) ?? []), race]);
+}
+const cities = [...cityMap.entries()].map(([name, list]) => ({
+  name,
+  count: list.length,
+  lat: list.reduce((s, r) => s + r.data.location.lat, 0) / list.length,
+  lng: list.reduce((s, r) => s + r.data.location.lng, 0) / list.length,
+}));
+
+// Personal bests: run distances come from Strava best efforts, triathlon
+// bests are the fastest finish at each distance.
+// Swim and bike bests are the fastest triathlon legs, plus the Cycle Tour.
+interface Best {
+  label: string;
+  time: number;
+  date: Date;
+}
+const quickest = (label: string, entries: { time: number; date: Date }[]) =>
+  entries
+    .sort((a, b) => a.time - b.time)
+    .slice(0, 1)
+    .map((entry) => ({ label, ...entry }));
+const triathlons = (distanceLabel: string) =>
+  races.filter(
+    (r) =>
+      r.data.kind === "triathlon" && r.data.distanceLabel === distanceLabel,
+  );
+const finishBest = (label: string, list: Race[]) =>
+  quickest(
+    label,
+    list.map((r) => ({ time: r.data.time, date: r.data.date })),
+  );
+const legBest = (label: string, list: Race[], sport: "swim" | "bike") =>
+  quickest(
+    label,
+    list.flatMap((r) =>
+      r.data.legs
+        .filter((leg) => leg.sport === sport)
+        .map((leg) => ({ time: leg.time, date: r.data.date })),
+    ),
+  );
+const half = triathlons("70.3");
+const full = triathlons("140.6");
+const bestGroups: { sport: string; bests: Best[] }[] = [
+  {
+    sport: "Run",
+    bests: runBests.map((b) => ({
+      label: b.label,
+      time: b.time,
+      date: new Date(b.date),
+    })),
+  },
+  {
+    sport: "Swim",
+    bests: [
+      ...legBest("1.9 km", half, "swim"),
+      ...legBest("3.8 km", full, "swim"),
+    ],
+  },
+  {
+    sport: "Bike",
+    bests: [
+      ...legBest("90 km", half, "bike"),
+      ...legBest("180 km", full, "bike"),
+      ...finishBest(
+        "Cycle Tour",
+        races.filter((r) => r.data.name === "Cape Town Cycle Tour"),
+      ),
+    ],
+  },
+  {
+    sport: "Triathlon",
+    bests: [
+      ...finishBest("Ironman 70.3", half),
+      ...finishBest("Ironman", full),
+    ],
+  },
+].filter((group) => group.bests.length > 0);
+
+// Races and distance by type.
+const KIND_PLURAL = {
+  triathlon: ["Triathlon", "Triathlons"],
+  run: ["Run", "Runs"],
+  ride: ["Ride", "Rides"],
+} as const;
+const kinds = (["triathlon", "run", "ride"] as const)
+  .map((kind) => {
+    const list = races.filter((r) => r.data.kind === kind);
+    return {
+      label: KIND_PLURAL[kind][list.length === 1 ? 0 : 1],
+      count: list.length,
+      km: list.reduce((sum, r) => sum + raceDistance(r), 0) / 1000,
+    };
+  })
+  .filter((kind) => kind.count > 0);
+
+// Latest season.
+const seasonYear = races[0].data.date.getUTCFullYear();
+const season = races.filter((r) => r.data.date.getUTCFullYear() === seasonYear);
+const seasonKm = season.reduce((sum, r) => sum + raceDistance(r), 0) / 1000;
+const seasonHours = season.reduce((sum, r) => sum + r.data.time, 0) / 3600;
+const months = "JFMAMJJASOND".split("").map((letter, month) => {
+  const hours =
+    season
+      .filter((r) => r.data.date.getUTCMonth() === month)
+      .reduce((sum, r) => sum + r.data.time, 0) / 3600;
+  return { letter, hours };
+});
+const maxMonthHours = Math.max(...months.map((m) => m.hours));
+
+const years = [...new Set(races.map((r) => r.data.date.getUTCFullYear()))];
+---
+
+<Layout
+  title="Races"
+  description="Triathlons, marathons and cycle races Dylan van Heerden has finished, with courses, splits and photos."
+>
+  <main class="py-8 sm:py-12">
+    <header class="mx-auto max-w-[760px] px-6 sm:px-8">
+      <a
+        href="/"
+        data-astro-prefetch
+        class="text-secondary hover:text-primary mb-16 inline-flex items-center gap-2 text-sm transition-colors duration-150"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m15 18-6-6 6-6"></path>
+        </svg>
+        Home
+      </a>
+      <h1 class="text-primary text-4xl font-semibold text-balance sm:text-5xl">
+        Races
+      </h1>
+      <p class="text-secondary mt-5 max-w-xl text-lg leading-8 text-pretty">
+        Triathlons, road races and cycle tours I've finished.
+      </p>
+      <div class="relative z-10 mt-12">
+        <p class="text-primary text-3xl font-semibold tabular-nums">
+          {Math.round(totalKm).toLocaleString("en-US")} km
+        </p>
+        <p class="text-secondary mt-1 text-sm">
+          raced · {races.length} events · {cities.length} cities · since {
+            firstYear
+          }
+        </p>
+      </div>
+    </header>
+
+    <div class="-mt-6 sm:-mt-14">
+      <RaceMap cities={cities} />
+    </div>
+
+    <div class="relative mx-auto -mt-10 max-w-[760px] px-6 sm:-mt-20 sm:px-8">
+      <section class="grid gap-3 sm:grid-cols-2" aria-label="Race statistics">
+        <dl class="grid grid-cols-3 gap-3 sm:col-span-2">
+          {
+            kinds.map((kind) => (
+              <div class="border-border bg-surface flex flex-col-reverse justify-end rounded-lg border p-4 sm:p-5">
+                <dt class="text-secondary mt-1 text-sm">
+                  {kind.label}
+                  <span class="text-secondary/60 mt-1 block text-xs tabular-nums">
+                    {Math.round(kind.km)} km
+                  </span>
+                </dt>
+                <dd class="text-primary text-2xl font-semibold tabular-nums">
+                  {kind.count}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+        <div
+          class="border-border bg-surface rounded-lg border p-5 sm:col-span-2"
+        >
+          <h2 class="text-primary text-sm font-medium">Personal bests</h2>
+          <div class="mt-5 grid gap-x-10 gap-y-6 sm:grid-cols-2">
+            {
+              bestGroups.map((group) => (
+                <div>
+                  <h3 class="text-accent text-xs">{group.sport}</h3>
+                  <dl class="mt-2.5 space-y-2.5 text-sm">
+                    {group.bests.map((best) => (
+                      <div class="flex items-baseline justify-between gap-4">
+                        <dt class="text-secondary">{best.label}</dt>
+                        <dd class="flex items-baseline gap-3">
+                          <span class="text-secondary/60 text-xs">
+                            {best.date.getUTCFullYear()}
+                          </span>
+                          <span class="text-primary font-medium tabular-nums">
+                            {formatTime(best.time)}
+                          </span>
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div
+          class="border-border bg-surface grid gap-x-10 rounded-lg border p-5 sm:col-span-2 sm:grid-cols-2"
+        >
+          <div>
+            <h2 class="text-primary text-sm font-medium">
+              {seasonYear} season
+            </h2>
+            <p class="text-primary mt-4 text-2xl font-semibold tabular-nums">
+              {season.length} races
+            </p>
+            <p class="text-secondary mt-1 text-sm tabular-nums">
+              {Math.round(seasonKm)} km · {seasonHours.toFixed(1)} hours on course
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-12 items-end gap-1.5 pt-6 sm:pt-0"
+            role="img"
+            aria-label={`Hours raced per month in ${seasonYear}`}
+          >
+            {
+              months.map((month) => (
+                <div class="flex flex-col items-center gap-2">
+                  <div class="flex h-14 w-full items-end justify-center">
+                    <div
+                      class:list={[
+                        "w-1.5 rounded-full",
+                        month.hours > 0 ? "bg-accent" : "bg-border",
+                      ]}
+                      style={`height: ${month.hours > 0 ? Math.max(14, (month.hours / maxMonthHours) * 100) : 7}%`}
+                    />
+                  </div>
+                  <span class="text-secondary/60 text-[10px]">
+                    {month.letter}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      {
+        years.map((year) => (
+          <section class="border-border mt-12 border-t pt-12 first-of-type:mt-16 sm:mt-16 sm:pt-16">
+            <div class="grid gap-6 sm:grid-cols-[140px_1fr] sm:gap-8">
+              <h2 class="text-primary text-sm font-medium tabular-nums">
+                {year}
+              </h2>
+              <ul class="min-w-0 space-y-7">
+                {races
+                  .filter((r) => r.data.date.getUTCFullYear() === year)
+                  .map((race) => (
+                    <li>
+                      <a
+                        href={`/races/${race.id}`}
+                        data-astro-prefetch
+                        class="group block"
+                      >
+                        <div class="flex items-baseline justify-between gap-6">
+                          <h3 class="text-primary group-hover:text-accent min-w-0 leading-6 font-medium text-pretty transition-colors duration-150">
+                            {race.data.name}
+                          </h3>
+                          <span class="text-primary shrink-0 text-sm tabular-nums">
+                            {formatTime(race.data.time)}
+                          </span>
+                        </div>
+                        <p class="text-secondary mt-1 text-sm">
+                          {formatDate(race.data.date, false)} · {race.data.city}{" "}
+                          · {KIND_LABEL[race.data.kind]}{" "}
+                          {race.data.distanceLabel}
+                        </p>
+                      </a>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          </section>
+        ))
+      }
+
+      <footer class="border-border mt-12 border-t py-8 text-sm sm:mt-16">
+        <p class="text-secondary">
+          Times, splits and courses recorded on Strava.
+        </p>
+      </footer>
+    </div>
+  </main>
+</Layout>

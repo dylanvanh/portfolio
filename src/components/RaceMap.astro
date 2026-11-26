@@ -1,0 +1,261 @@
+---
+// Tilted block map, drawn at build time. No client JavaScript.
+import { feature } from "topojson-client";
+import { geoContains } from "d3-geo";
+import landTopo from "world-atlas/land-110m.json";
+
+interface City {
+  name: string;
+  lat: number;
+  lng: number;
+  count: number;
+}
+
+const { cities } = Astro.props as { cities: City[] };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const topo = landTopo as any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const land = feature(topo, topo.objects.land) as any;
+
+const lngs = cities.map((c) => c.lng);
+const lats = cities.map((c) => c.lat);
+const lonSpan = Math.max(Math.max(...lngs) - Math.min(...lngs) + 10, 26);
+const latSpan = lonSpan * 0.7;
+const lonC = (Math.min(...lngs) + Math.max(...lngs)) / 2;
+const latC = (Math.min(...lats) + Math.max(...lats)) / 2 + latSpan * 0.18;
+const k = Math.cos((latC * Math.PI) / 180);
+
+const COLS = 76;
+const dLon = lonSpan / COLS;
+const dLat = dLon * k;
+const ROWS = Math.round(latSpan / dLat);
+const lon0 = lonC - lonSpan / 2;
+const lat0 = latC - (ROWS * dLat) / 2;
+
+const theta = (-14 * Math.PI) / 180;
+const cosT = Math.cos(theta);
+const sinT = Math.sin(theta);
+const SCALE = 1000 / (lonSpan * k);
+const TILT = 0.52;
+
+type Pt = [number, number];
+const project = (lng: number, lat: number, h = 0): Pt => {
+  const u = (lng - lonC) * k;
+  const v = lat - latC;
+  return [
+    (u * cosT - v * sinT) * SCALE,
+    -(u * sinT + v * cosT) * SCALE * TILT - h,
+  ];
+};
+
+// Deterministic noise so the map is identical on every build.
+const rand = (i: number, j: number, salt = 0) => {
+  const x = Math.sin(i * 127.1 + j * 311.7 + salt * 74.7) * 43758.5453;
+  return x - Math.floor(x);
+};
+
+const cellOf = (lng: number, lat: number) => [
+  Math.floor((lng - lon0) / dLon),
+  Math.floor((lat - lat0) / dLat),
+];
+const cityCells = cities.map((c) => cellOf(c.lng, c.lat));
+const maxHeight = (c: City) => 40 + 24 * Math.sqrt(c.count);
+const REACH = 5;
+const GAP = 0.14;
+
+const flat: string[][] = [[], [], []];
+interface Block {
+  y: number;
+  faces: { d: string; fill: string }[];
+}
+const blocks: Block[] = [];
+const pins: { city: City; x: number; y: number; labelY: number }[] = [];
+
+const pathOf = (pts: Pt[]) =>
+  "M" + pts.map((p) => `${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join("L") + "Z";
+
+const NEUTRAL = ["hsl(220 7% 25%)", "hsl(220 8% 14%)", "hsl(220 7% 19%)"];
+const ACCENT = ["hsl(38 20% 76%)", "hsl(38 12% 38%)", "hsl(38 15% 54%)"];
+
+for (let j = 0; j < ROWS; j++) {
+  for (let i = 0; i < COLS; i++) {
+    const cityIndex = cityCells.findIndex(([ci, cj]) => ci === i && cj === j);
+    const lng = lon0 + (i + 0.5) * dLon;
+    const lat = lat0 + (j + 0.5) * dLat;
+    if (cityIndex < 0 && !geoContains(land, [lng, lat])) continue;
+
+    let height = 0;
+    let accent = false;
+    if (cityIndex >= 0) {
+      height = maxHeight(cities[cityIndex]);
+      accent = true;
+    } else {
+      cityCells.forEach(([ci, cj], index) => {
+        const d = Math.hypot(i - ci, j - cj) / REACH;
+        if (d >= 1 || rand(i, j, 1) < 0.3) return;
+        const h =
+          maxHeight(cities[index]) *
+          0.75 *
+          Math.pow(1 - d, 1.5) *
+          (0.35 + 0.65 * rand(i, j, 2));
+        if (h > height) {
+          height = h;
+          accent = rand(i, j, 3) < 0.28;
+        }
+      });
+    }
+
+    const corner = (di: number, dj: number, h = 0) =>
+      project(lon0 + (i + di) * dLon, lat0 + (j + dj) * dLat, h);
+    const lo = GAP / 2;
+    const hi = 1 - GAP / 2;
+    const ring: [number, number][] = [
+      [lo, lo],
+      [hi, lo],
+      [hi, hi],
+      [lo, hi],
+    ];
+    const ground = ring.map(([a, b]) => corner(a, b));
+
+    // Scattered low blocks give the land some texture away from the pins.
+    if (height < 3 && rand(i, j, 4) < 0.14) {
+      height = 4 + 14 * rand(i, j, 5);
+    }
+
+    if (height < 3) {
+      flat[Math.floor(rand(i, j) * 3)].push(pathOf(ground));
+      continue;
+    }
+
+    const top = ring.map(([a, b]) => corner(a, b, height));
+    const cx = ground.reduce((s, p) => s + p[0], 0) / 4;
+    const cy = ground.reduce((s, p) => s + p[1], 0) / 4;
+    const tones = accent ? ACCENT : NEUTRAL;
+    const faces: Block["faces"] = [];
+    for (let e = 0; e < 4; e++) {
+      const a = e;
+      const b = (e + 1) % 4;
+      const midY = (ground[a][1] + ground[b][1]) / 2;
+      if (midY <= cy) continue;
+      const midX = (ground[a][0] + ground[b][0]) / 2;
+      faces.push({
+        d: pathOf([ground[a], ground[b], top[b], top[a]]),
+        fill: midX < cx ? tones[1] : tones[2],
+      });
+    }
+    faces.push({ d: pathOf(top), fill: tones[0] });
+    blocks.push({ y: cy, faces });
+
+    if (cityIndex >= 0) {
+      pins.push({
+        city: cities[cityIndex],
+        x: top.reduce((s, p) => s + p[0], 0) / 4,
+        y: top.reduce((s, p) => s + p[1], 0) / 4,
+        labelY: 0,
+      });
+    }
+  }
+}
+blocks.sort((a, b) => a.y - b.y);
+
+// Lift a label above its neighbours when the pills would collide.
+pins.sort((a, b) => a.x - b.x);
+pins.forEach((pin, index) => {
+  pin.labelY = pin.y - 12;
+  for (let pass = 0; pass < pins.length; pass++) {
+    const clash = pins
+      .slice(0, index)
+      .find(
+        (other) =>
+          Math.abs(other.x - pin.x) < 190 &&
+          Math.abs(other.labelY - pin.labelY) < 52,
+      );
+    if (!clash) break;
+    pin.labelY = clash.labelY - 52;
+  }
+});
+
+const extent = [
+  project(lon0, lat0),
+  project(lon0 + lonSpan, lat0),
+  project(lon0, lat0 + ROWS * dLat),
+  project(lon0 + lonSpan, lat0 + ROWS * dLat),
+];
+const minX = Math.min(...extent.map((p) => p[0]));
+const maxX = Math.max(...extent.map((p) => p[0]));
+const minY = Math.min(...extent.map((p) => p[1])) - 120;
+const maxY = Math.max(...extent.map((p) => p[1]));
+const width = maxX - minX;
+const height = maxY - minY;
+const FLAT_FILLS = [
+  "hsl(220 8% 11.5%)",
+  "hsl(220 8% 13.5%)",
+  "hsl(220 8% 15.5%)",
+];
+
+const summary = cities
+  .map((c) => `${c.name}: ${c.count} ${c.count === 1 ? "race" : "races"}`)
+  .join(", ");
+---
+
+<div
+  class="flex justify-center overflow-hidden"
+  role="img"
+  aria-label={`Map of race locations. ${summary}.`}
+>
+  <div
+    class="relative shrink-0"
+    style={`width: max(100%, 820px); max-width: 1180px; aspect-ratio: ${width.toFixed(0)} / ${height.toFixed(0)};`}
+  >
+    <svg
+      viewBox={`${minX.toFixed(1)} ${minY.toFixed(1)} ${width.toFixed(1)} ${height.toFixed(1)}`}
+      class="race-map-fade absolute inset-0 size-full"
+      aria-hidden="true"
+    >
+      {
+        flat.map((paths, index) => (
+          <path d={paths.join("")} fill={FLAT_FILLS[index]} />
+        ))
+      }
+      {
+        blocks.map((block) =>
+          block.faces.map((face) => <path d={face.d} fill={face.fill} />),
+        )
+      }
+    </svg>
+    {
+      pins.map((pin) => (
+        <>
+          <div
+            class="bg-accent/50 absolute w-px"
+            style={`left: ${(((pin.x - minX) / width) * 100).toFixed(2)}%; top: ${(((pin.labelY - minY) / height) * 100).toFixed(2)}%; height: ${(((pin.y - pin.labelY) / height) * 100).toFixed(2)}%;`}
+          />
+          <div
+            class="border-border bg-background text-primary absolute flex -translate-x-1/2 -translate-y-full items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs whitespace-nowrap shadow-lg shadow-black/40"
+            style={`left: ${(((pin.x - minX) / width) * 100).toFixed(2)}%; top: ${(((pin.labelY - minY) / height) * 100).toFixed(2)}%;`}
+          >
+            <span class="bg-accent size-1.5 rounded-full" />
+            {pin.city.name}
+            <span class="text-accent tabular-nums">{pin.city.count}</span>
+          </div>
+        </>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .race-map-fade {
+    mask-image:
+      linear-gradient(to bottom, transparent 14%, black 62%),
+      linear-gradient(
+        to right,
+        transparent 4%,
+        black 24%,
+        black 76%,
+        transparent 96%
+      );
+    mask-composite: intersect;
+  }
+</style>
