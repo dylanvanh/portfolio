@@ -293,6 +293,13 @@ const years = [...new Set(races.map((r) => r.data.date.getUTCFullYear()))];
                           </h3>
                           <span class="text-primary shrink-0 text-sm tabular-nums">
                             {formatTime(race.data.time)}
+                            <span
+                              class="text-secondary group-hover:text-primary transition-colors duration-150"
+                              aria-hidden="true"
+                            >
+                              {" "}
+                              ↗
+                            </span>
                           </span>
                         </div>
                         <p class="text-secondary mt-1 text-sm">
